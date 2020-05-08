@@ -1,0 +1,7 @@
+MY_USERNAME = 'masha24484'
+MY_PASSWORD = 'm24484'
+
+# MY_USERNAME = 'project6805'
+# MY_PASSWORD = 'po6805'
+
+COOCKIE_FILE_PATH = 'coockie.txt'
