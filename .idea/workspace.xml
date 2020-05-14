@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants_local.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588877737096</updated>
-      <workItem from="1588877738332" duration="32687000" />
+      <workItem from="1588877738332" duration="34234000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -196,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589462802976</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add CORS">
+      <created>1589467186715</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589467186715</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,17 +213,18 @@
     <MESSAGE value="Add Flask" />
     <MESSAGE value="Add get_followeers module" />
     <MESSAGE value="Add requirements file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add requirements file" />
+    <MESSAGE value="Add CORS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CORS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588955900068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588955900068" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589462802242">
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589467184848">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589462802242" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589467184848" />
     <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1588945094873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -242,10 +249,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589462804781">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589467189070">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589462804781" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589467189070" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1589456384972">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
