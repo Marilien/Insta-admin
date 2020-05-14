@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example_get_user_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example_get_user_id.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers-service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588877737096</updated>
-      <workItem from="1588877738332" duration="29883000" />
+      <workItem from="1588877738332" duration="30450000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -185,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589455663569</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add requirements file">
+      <created>1589462477957</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589462477957</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,17 +198,18 @@
     <MESSAGE value="init" />
     <MESSAGE value="Add Flask" />
     <MESSAGE value="Add get_followeers module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add get_followeers module" />
+    <MESSAGE value="Add requirements file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add requirements file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588955900068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588955900068" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589455661846">
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589462477066">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589455661846" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589462477066" />
     <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1588945094873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -230,10 +234,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589455665445">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589462479357">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589455665445" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589462479357" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1589456384972">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
