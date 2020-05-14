@@ -34,7 +34,7 @@ def login_get_api(username, password, coockie_file):
     logger.setLevel(logging.WARNING)
 
     # # Example command:
-    # # python examples/main.py -u "yyy" -p "zzz" -settings "test_credentials.json"
+    # # python examples/followers-service.py -u "yyy" -p "zzz" -settings "test_credentials.json"
     # parser = argparse.ArgumentParser(description='login callback and save settings demo')
     # parser.add_argument('-settings', '--settings', dest='settings_file_path', type=str, required=True)
     # parser.add_argument('-u', '--username', dest='username', type=str, required=True)
@@ -168,9 +168,17 @@ def get_followers_list(api, user_id, save=True):
     return followers_names
 
 
-if __name__ == '__main__':
-    user_id = get_insta_id("marta.khoma") # 5510404286
-    print(user_id)
-
+def followers(username):
+    user_id = get_insta_id(username)
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     followers_list = get_followers_list(api=api, user_id=user_id)
+
+    return followers_list
+
+
+# if __name__ == '__main__':
+#     user_id = get_insta_id("marta.khoma") # 5510404286
+#     print(user_id)
+#
+#     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+#     followers_list = get_followers_list(api=api, user_id=user_id)

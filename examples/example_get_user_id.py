@@ -15,7 +15,7 @@ def get_id(username):
 
 # def main():
 #     if len(sys.argv) < 2:
-#         print("Usage: \npython main.py USERNAME")
+#         print("Usage: \npython followers-service.py USERNAME")
 #         return
 #     user_id = get_id(sys.argv[1])
 #     print("ID: " + user_id)

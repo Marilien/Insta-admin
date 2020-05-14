@@ -12,23 +12,23 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /people:
+  /followers/{username}:
     get:
-      operationId: "people.read"
+      operationId: followers-service.followers
       tags:
-        - "People"
+        - "Followers"
       summary: "The people data structure supported by the server application"
-      description: "Read the list of people"
+      description: "Read the list of followers"
+      parameters:
+        - name: username
+          in: path
+          description: Last name of the person to get from the list
+          type: string
+          required: True
       responses:
         200:
           description: "Successful read people list operation"
           schema:
             type: "array"
-            items:
-              properties:
-                fname:
-                  type: "string"
-                lname:
-                  type: "string"
-                timestamp:
-                  type: "string"
+#            items:
+#              properties:
