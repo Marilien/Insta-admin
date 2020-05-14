@@ -5,6 +5,7 @@ import os.path
 import logging
 import argparse
 import time
+import requests
 
 import instaloader
 from six.moves.urllib.request import urlopen
@@ -108,25 +109,26 @@ def login_get_api(username, password, coockie_file):
 
 
 def get_insta_id(username):
-    link = 'http://www.instagram.com/' + username
-    response = urlopen(link)
-    content = str(response.read())
-    start_pos = content.find('"owner":{"id":"') + len('"owner":{"id":"')
-    end_pos = content[start_pos:].find('"')
-    insta_id = content[start_pos:start_pos+end_pos]
-    return insta_id
+    url = "https://www.instagram.com/web/search/topsearch/?context=blended&query=" + username + "&rank_token=0.3953592318270893&count=1"
+    response = requests.get(url)
+    respJSON = response.json()
+    try:
+        user_id = str(respJSON['users'][0].get("user").get("pk"))
+        return user_id
+    except:
+        return "Unexpected error"
 
 
 def get_followers_list(api, user_id, save=True):
     # Show when login expires
     # cookie_expiry = api.cookie_jar.auth_expires
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
-    try:
-        uuid = api.generate_uuid()
-        followers = api.user_followers(user_id=user_id, rank_token=uuid)
-    except Exception:
-        print('Too many queries')
-        followers = {}
+
+    uuid = api.generate_uuid()
+    followers = api.user_followers(user_id=user_id, rank_token=uuid)
+
+    # followers = {}
+
 
     updates_followers = []
     updates_followers.extend(followers.get('users', []))
@@ -134,17 +136,16 @@ def get_followers_list(api, user_id, save=True):
     next_max_id = followers.get('next_max_id')
     while next_max_id:
         print(next_max_id)
-        try:
-            followers = api.user_followers(user_id=user_id, rank_token=uuid, max_id=next_max_id)
-        except Exception:
-            print('Too many queries')
 
+        followers = api.user_followers(user_id=user_id, rank_token=uuid, max_id=next_max_id)
         print(followers)
         print(len(followers['users']))
         updates_followers.extend(followers.get('users', []))
         # if len(updates) >= 30:       # get only first 30 or so
         #     break
         next_max_id = followers.get('next_max_id')
+
+
 
         if save:
             with open('data/followers_' + str(user_id) + '.txt', 'w', encoding="utf-8") as file:
@@ -168,7 +169,8 @@ def get_followers_list(api, user_id, save=True):
 
 
 if __name__ == '__main__':
-    user_id = get_insta_id("pythongirl_m")
+    user_id = get_insta_id("marta.khoma") # 5510404286
+    print(user_id)
 
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     followers_list = get_followers_list(api=api, user_id=user_id)

@@ -2,110 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Insta_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants_local.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coockie.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/followers_186438325.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/FUNDING.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/ISSUE_TEMPLATE/bug-report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/ISSUE_TEMPLATE/feature-request.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/ISSUE_TEMPLATE/question-others.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/COMPAT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/Insta_give_away_project/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/api.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/faq.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/index.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/make.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/docs/usage.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/examples/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/examples/pagination.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/examples/savesettings_logincallback.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/compatpatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/accounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/collections.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/discover.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/feed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/friendships.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/highlights.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/igtv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/live.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/locations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/media.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/upload.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/endpoints/usertags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/http.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_private_api/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/compatpatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/instagram_web_api/http.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/misc/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/misc/checkpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/requirements-dev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/accounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/apiutils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/collections.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/compatpatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/discover.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/feed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/friendships.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/highlights.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/igtv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/live.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/locations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/media.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/upload.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/private/usertags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/test_private_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/test_web_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/compatpatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/feed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/media.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/unauthenticated.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/upload.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instagram_private_api_lib/tests/web/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coockie.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -137,6 +38,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -149,10 +51,33 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Maria\PycharmProjects\Insta_project\templates" />
       <recent name="C:\Users\Maria\PycharmProjects\Insta_project\instagram_private_api_lib" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.server">
+    <configuration name="example_get_user_id" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Insta_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/example_get_user_id.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Insta_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,9 +100,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Insta_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.server" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.example_get_user_id" />
       </list>
     </recent_temporary>
   </component>
@@ -203,40 +152,66 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588877737096</updated>
-      <workItem from="1588877738332" duration="10424000" />
+      <workItem from="1588877738332" duration="24187000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1588945209012</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588945209012</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588884786776">
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588955900068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588884786776" />
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588955900068" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1588945207176">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588945207176" />
     <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1588945094873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588945094873" />
-    <state width="1237" height="217" key="GridCell.Tab.0.bottom" timestamp="1588945014918">
+    <state width="1237" height="235" key="GridCell.Tab.0.bottom" timestamp="1589455396449">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588945014918" />
-    <state width="1237" height="217" key="GridCell.Tab.0.center" timestamp="1588945014909">
+    <state width="1237" height="235" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1589455396449" />
+    <state width="1237" height="235" key="GridCell.Tab.0.center" timestamp="1589455396445">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="217" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588945014909" />
-    <state width="1237" height="217" key="GridCell.Tab.0.left" timestamp="1588945014909">
+    <state width="1237" height="235" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1589455396445" />
+    <state width="1237" height="235" key="GridCell.Tab.0.left" timestamp="1589455396445">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="217" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588945014909" />
-    <state width="1237" height="217" key="GridCell.Tab.0.right" timestamp="1588945014915">
+    <state width="1237" height="235" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1589455396445" />
+    <state width="1237" height="235" key="GridCell.Tab.0.right" timestamp="1589455396448">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="217" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588945014915" />
+    <state width="1237" height="235" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1589455396448" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1588945235416">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1588945235416" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1588948450908">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1588948450908" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1588944998716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1589454156008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1588955379781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
