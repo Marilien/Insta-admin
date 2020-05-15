@@ -29,6 +29,6 @@ paths:
         200:
           description: "Successful read people list operation"
           schema:
-            type: "array"
+            type: "object"
 #            items:
 #              properties:

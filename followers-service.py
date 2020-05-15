@@ -174,10 +174,10 @@ def get_followers_list(api, user_id, save=True):
 
         time.sleep(3)
 
-    print('followers all', updates_followers)
-    print('updates len', len(updates_followers))
+    # print('followers all', updates_followers)
+    # print('updates len', len(updates_followers))
     followers_names = [x['username'] for x in updates_followers]
-    print('followers names: ', followers_names)
+    # print('followers names: ', followers_names)
     print(len(followers_names))
 
     # with open('followers_' + str(user_id) + '.txt', 'w') as file:
@@ -191,19 +191,26 @@ def get_followers_list(api, user_id, save=True):
 def followers(username):
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     user_id = get_insta_id(api, username)
-    if user_id is None:
-        return {'message': 'Sorry, you are trying to access private account'}, 409
+
+    if user_id is not None:
+        user_info = get_user_info(api, username)
+        followers_len = user_info.get('user', []).get('follower_count', [])
+    else:
+        return {'message': 'Sorry, you are trying to access private account'}
     followers_list = get_followers_list(api=api, user_id=user_id)
 
-    return followers_list
+    return {followers_len: followers_list}
 
 
-# if __name__ == '__main__':
-#     # user_id = get_insta_id("marilien_m")  # 5510404286
-#     # print(user_id)
-#
-#     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-#     user_info = get_user_info(api=api, user_name='marilien_m')
-#     print(user_info.get('user', []).get('is_private', []))
-
-    # followers_list = get_followers_list(api=api, user_id=user_id)
+if __name__ == '__main__':
+    followers = followers('pythongirl_m')
+    print(followers)
+    # # user_id = get_insta_id("marilien_m")  # 5510404286
+    # # print(user_id)
+    #
+    # api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    # user_info = get_user_info(api=api, user_name='marilien_m')
+    # print(user_info)
+    # # print(user_info.get('user', []).get('is_private', []))
+    #
+    # # followers_list = get_followers_list(api=api, user_id=user_id)
