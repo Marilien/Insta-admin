@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/followers-service.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers-service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588877737096</updated>
       <workItem from="1588877738332" duration="34234000" />
-      <workItem from="1589538422066" duration="10353000" />
+      <workItem from="1589538422066" duration="10906000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -260,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589547937534</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Count numbers of followers before get list of followers">
+      <created>1589549536390</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589549536390</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,17 +278,18 @@
     <MESSAGE value="Add requirements file" />
     <MESSAGE value="Add CORS" />
     <MESSAGE value="Check if account is private" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check if account is private" />
+    <MESSAGE value="Count numbers of followers before get list of followers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Count numbers of followers before get list of followers" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588955900068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1588955900068" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589547936390">
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1589549535778">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589547936390" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1589549535778" />
     <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1588945094873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -308,10 +314,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589547939584">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1589549537638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589547939584" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1589549537638" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1589542201954">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
