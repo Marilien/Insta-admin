@@ -199,7 +199,8 @@ def followers(username):
         return {'message': 'Sorry, you are trying to access private account'}
     followers_list = get_followers_list(api=api, user_id=user_id)
 
-    return {'len_followers':followers_len, 'followers_list': followers_list}
+    # return {'len_followers':followers_len, 'followers_list': followers_list}
+    return {followers_len: followers_list}
 
 
 if __name__ == '__main__':
