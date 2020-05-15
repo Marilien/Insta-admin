@@ -108,15 +108,38 @@ def login_get_api(username, password, coockie_file):
     return api
 
 
-def get_insta_id(username):
-    url = "https://www.instagram.com/web/search/topsearch/?context=blended&query=" + username + "&rank_token=0.3953592318270893&count=1"
-    response = requests.get(url)
-    respJSON = response.json()
-    try:
-        user_id = str(respJSON['users'][0].get("user").get("pk"))
-        return user_id
-    except:
-        return "Unexpected error"
+# def get_insta_id(username):
+#     url = "https://www.instagram.com/web/search/topsearch/?context=blended&query=" + username + "&rank_token=0.3953592318270893&count=1"
+#     response = requests.get(url)
+#     respJSON = response.json()
+#     try:
+#         user_id = str(respJSON['users'][0].get("user").get("pk"))
+#         return user_id
+#     except:
+#         return "Unexpected error"
+
+def get_user_info(api, user_name):
+    # uuid = api.generate_uuid()
+    user_info = api.username_info(user_name)
+    return user_info
+
+
+def get_insta_id(api, user_name):
+    user_info = get_user_info(api=api, user_name=user_name)
+
+    if not user_info.get('user', []).get('is_private', []):
+        link = 'http://www.instagram.com/' + user_name
+        response = urlopen(link)
+        content = str(response.read())
+        start_pos = content.find('"owner":{"id":"') + len('"owner":{"id":"')
+        end_pos = content[start_pos:].find('"')
+        insta_id = content[start_pos:start_pos + end_pos]
+
+    else:
+        # print('Sorry, you are trying to access private account')
+        return None
+
+    return insta_id
 
 
 def get_followers_list(api, user_id, save=True):
@@ -128,7 +151,6 @@ def get_followers_list(api, user_id, save=True):
     followers = api.user_followers(user_id=user_id, rank_token=uuid)
 
     # followers = {}
-
 
     updates_followers = []
     updates_followers.extend(followers.get('users', []))
@@ -144,8 +166,6 @@ def get_followers_list(api, user_id, save=True):
         # if len(updates) >= 30:       # get only first 30 or so
         #     break
         next_max_id = followers.get('next_max_id')
-
-
 
         if save:
             with open('data/followers_' + str(user_id) + '.txt', 'w', encoding="utf-8") as file:
@@ -169,16 +189,21 @@ def get_followers_list(api, user_id, save=True):
 
 
 def followers(username):
-    user_id = get_insta_id(username)
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    user_id = get_insta_id(api, username)
+    if user_id is None:
+        return {'message': 'Sorry, you are trying to access private account'}, 409
     followers_list = get_followers_list(api=api, user_id=user_id)
 
     return followers_list
 
 
 # if __name__ == '__main__':
-#     user_id = get_insta_id("marta.khoma") # 5510404286
-#     print(user_id)
+#     # user_id = get_insta_id("marilien_m")  # 5510404286
+#     # print(user_id)
 #
 #     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-#     followers_list = get_followers_list(api=api, user_id=user_id)
+#     user_info = get_user_info(api=api, user_name='marilien_m')
+#     print(user_info.get('user', []).get('is_private', []))
+
+    # followers_list = get_followers_list(api=api, user_id=user_id)
