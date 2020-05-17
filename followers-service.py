@@ -148,6 +148,7 @@ def get_followers_list(api, user_id, save=True):
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
 
     uuid = api.generate_uuid()
+    print("@@@@@@@@@@@@", user_id, uuid)
     followers = api.user_followers(user_id=user_id, rank_token=uuid)
 
     # followers = {}
