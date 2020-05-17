@@ -196,22 +196,26 @@ def followers(username):
         user_info = get_user_info(api, username)
         followers_len = user_info.get('user', []).get('follower_count', [])
     else:
-        return {'message': 'Sorry, you are trying to access private account'}
+        return {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
     followers_list = get_followers_list(api=api, user_id=user_id)
 
     # return {'len_followers':followers_len, 'followers_list': followers_list}
-    return {followers_len: followers_list}
+    return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
+
+       # {followers_len: followers_list}
 
 
 if __name__ == '__main__':
-    followers = followers('pythongirl_m')
+    followers = followers('allo')
     print(followers)
-    # # user_id = get_insta_id("marilien_m")  # 5510404286
-    # # print(user_id)
-    #
-    # api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-    # user_info = get_user_info(api=api, user_name='marilien_m')
-    # print(user_info)
-    # # print(user_info.get('user', []).get('is_private', []))
-    #
-    # # followers_list = get_followers_list(api=api, user_id=user_id)
+#
+#
+#     # user_id = get_insta_id("marilien_m")  # 5510404286
+#     # print(user_id)
+#
+#     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+#     user_info = get_user_info(api=api, user_name='marilien_m')
+#     print(user_info)
+#     # print(user_info.get('user', []).get('is_private', []))
+#
+#     # followers_list = get_followers_list(api=api, user_id=user_id)
