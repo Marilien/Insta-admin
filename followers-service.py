@@ -201,6 +201,7 @@ def cache_reset():
 
 def followers(username):
     if username in cache:
+        print('return followers from cache')
         return cache[username]
     api = login_get_api(username=MY_USERNAME,
                         password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
