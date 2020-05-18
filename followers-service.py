@@ -192,6 +192,7 @@ def get_followers_list(api, user_id, save=True):
 
 
 def cache_reset():
+    print('reset cache')
     cache.clear()
     return True
 
