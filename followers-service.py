@@ -200,6 +200,7 @@ def cache_reset():
 
 
 def followers(username):
+    print(cache.keys())
     if username in cache:
         print('return followers from cache')
         return cache[username]
