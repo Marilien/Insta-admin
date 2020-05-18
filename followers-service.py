@@ -80,7 +80,8 @@ def login_get_api(username, password, coockie_file):
             #     settings=cached_settings)
 
     except (ClientCookieExpiredError, ClientLoginRequiredError) as e:
-        print('ClientCookieExpiredError/ClientLoginRequiredError: {0!s}'.format(e))
+        print(
+            'ClientCookieExpiredError/ClientLoginRequiredError: {0!s}'.format(e))
 
         # Login expired
         # Do relogin but use default ua, keys and such
@@ -99,7 +100,8 @@ def login_get_api(username, password, coockie_file):
         print('ClientLoginError {0!s}'.format(e))
         exit(9)
     except ClientError as e:
-        print('ClientError {0!s} (Code: {1:d}, Response: {2!s})'.format(e.msg, e.code, e.error_response))
+        print('ClientError {0!s} (Code: {1:d}, Response: {2!s})'.format(
+            e.msg, e.code, e.error_response))
         exit(9)
     except Exception as e:
         print('Unexpected Exception: {0!s}'.format(e))
@@ -148,7 +150,6 @@ def get_followers_list(api, user_id, save=True):
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
 
     uuid = api.generate_uuid()
-    print("@@@@@@@@@@@@", user_id, uuid)
     followers = api.user_followers(user_id=user_id, rank_token=uuid)
 
     # followers = {}
@@ -160,8 +161,9 @@ def get_followers_list(api, user_id, save=True):
     while next_max_id:
         print(next_max_id)
 
-        followers = api.user_followers(user_id=user_id, rank_token=uuid, max_id=next_max_id)
-        print(followers)
+        followers = api.user_followers(
+            user_id=user_id, rank_token=uuid, max_id=next_max_id)
+        # print(followers)
         print(len(followers['users']))
         updates_followers.extend(followers.get('users', []))
         # if len(updates) >= 30:       # get only first 30 or so
@@ -190,6 +192,11 @@ def get_followers_list(api, user_id, save=True):
 
 
 cache = {}
+
+
+def cache_reset():
+    cache.clear()
+    return True
 
 
 def followers(username):
