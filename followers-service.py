@@ -12,7 +12,7 @@ from six.moves.urllib.request import urlopen
 from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
 from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
-
+from cache import cache
 try:
     from instagram_private_api import (
         Client, ClientError, ClientLoginError,
@@ -189,9 +189,6 @@ def get_followers_list(api, user_id, save=True):
     # print('All ok, list in file')
 
     return followers_names
-
-
-cache = {}
 
 
 def cache_reset():
