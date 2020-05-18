@@ -189,21 +189,32 @@ def get_followers_list(api, user_id, save=True):
     return followers_names
 
 
+cache = {}
+
+
 def followers(username):
-    api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    if username in cache:
+        return cache[username]
+    api = login_get_api(username=MY_USERNAME,
+                        password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     user_id = get_insta_id(api, username)
 
     if user_id is not None:
         user_info = get_user_info(api, username)
         followers_len = user_info.get('user', []).get('follower_count', [])
     else:
-        return {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
+        res = {'msg': 'Sorry, you are trying to access private account',
+               'num_of_foll': None, 'foll_list': None}
+        cache[username] = res
+        return res
     followers_list = get_followers_list(api=api, user_id=user_id)
 
     # return {'len_followers':followers_len, 'followers_list': followers_list}
-    return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
-
-       # {followers_len: followers_list}
+    res = {'msg': "Account exist", 'num_of_foll': followers_len,
+           'foll_list': followers_list}
+    cache[username] = res
+    return res
+    # {followers_len: followers_list}
 
 
 if __name__ == '__main__':
