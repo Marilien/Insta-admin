@@ -214,8 +214,8 @@ def followers(username):
                 return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
 
 
-if __name__ == '__main__':
-    # start_program_time = time()
-    followers = followers('alexandramitroshina')
-    print(followers)
-    # print(time() - start_program_time)
+# if __name__ == '__main__':
+#     # start_program_time = time()
+#     followers = followers('alexandramitroshina')
+#     print(followers)
+#     # print(time() - start_program_time)
