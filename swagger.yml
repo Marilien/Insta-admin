@@ -30,5 +30,12 @@ paths:
           description: "Successful read people list operation"
           schema:
             type: "object"
-#            items:
-#              properties:
+  /cache/reset:
+    get:
+      operationId: followers-service.cache_reset
+      tags:
+        - "Cache reset"
+      description: "Reset followers cache"
+      responses:
+        200:
+          description: "Successful reset"
