@@ -4,7 +4,7 @@ import datetime
 import os.path
 import logging
 import argparse
-import time
+from time import time, sleep
 import requests
 
 import instaloader
@@ -124,28 +124,31 @@ def get_user_info(api, user_name):
     return user_info
 
 
-def get_insta_id(api, user_name):
-    user_info = get_user_info(api=api, user_name=user_name)
-
-    if not user_info.get('user', []).get('is_private', []):
-        link = 'http://www.instagram.com/' + user_name
-        response = urlopen(link)
-        content = str(response.read())
-        start_pos = content.find('"owner":{"id":"') + len('"owner":{"id":"')
-        end_pos = content[start_pos:].find('"')
-        insta_id = content[start_pos:start_pos + end_pos]
-
-    else:
-        # print('Sorry, you are trying to access private account')
-        return None
-
-    return insta_id
+# def get_insta_id(api, user_name):
+#     user_info = get_user_info(api=api, user_name=user_name)
+#
+#     if not user_info.get('user', []).get('is_private', []):
+#         link = 'http://www.instagram.com/' + user_name
+#         response = urlopen(link)
+#         content = str(response.read())
+#         start_pos = content.find('"owner":{"id":"') + len('"owner":{"id":"')
+#         end_pos = content[start_pos:].find('"')
+#         insta_id = content[start_pos:start_pos + end_pos]
+#
+#     else:
+#         # print('Sorry, you are trying to access private account')
+#         return None
+#
+#     return insta_id
 
 
 def get_followers_list(api, user_id, save=True):
+
     # Show when login expires
     # cookie_expiry = api.cookie_jar.auth_expires
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
+    start_time = time()
+    list_foll_len = 0
 
     uuid = api.generate_uuid()
     print("@@@@@@@@@@@@", user_id, uuid)
@@ -173,13 +176,16 @@ def get_followers_list(api, user_id, save=True):
                 for item in updates_followers:
                     file.write('%s\n' % item['username'])
 
-        time.sleep(3)
+        list_foll_len += len(updates_followers)
+        # print(list_foll_len)
+        print(time() - start_time)
+        sleep(0.01)
 
     # print('followers all', updates_followers)
-    # print('updates len', len(updates_followers))
     followers_names = [x['username'] for x in updates_followers]
     # print('followers names: ', followers_names)
-    print(len(followers_names))
+
+
 
     # with open('followers_' + str(user_id) + '.txt', 'w') as file:
     #     for item in followers_names:
@@ -191,32 +197,25 @@ def get_followers_list(api, user_id, save=True):
 
 def followers(username):
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-    user_id = get_insta_id(api, username)
+    user_info = get_user_info(api, username)
+    user_id = user_info.get('user', []).get('pk', [])
+    followers_len = user_info.get('user', []).get('follower_count', [])
 
-    if user_id is not None:
-        user_info = get_user_info(api, username)
-        followers_len = user_info.get('user', []).get('follower_count', [])
-    else:
+    if user_info.get('user', []).get('is_private', []):
         return {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
-    followers_list = get_followers_list(api=api, user_id=user_id)
-
-    # return {'len_followers':followers_len, 'followers_list': followers_list}
-    return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
-
-       # {followers_len: followers_list}
+    else:
+        if followers_len == 0:
+            return {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
+        else:
+            if followers_len > 200000:
+                return {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+            else:
+                followers_list = get_followers_list(api=api, user_id=user_id)
+                return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
 
 
 if __name__ == '__main__':
-    followers = followers('allo')
+    # start_program_time = time()
+    followers = followers('alexandramitroshina')
     print(followers)
-#
-#
-#     # user_id = get_insta_id("marilien_m")  # 5510404286
-#     # print(user_id)
-#
-#     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-#     user_info = get_user_info(api=api, user_name='marilien_m')
-#     print(user_info)
-#     # print(user_info.get('user', []).get('is_private', []))
-#
-#     # followers_list = get_followers_list(api=api, user_id=user_id)
+    # print(time() - start_program_time)
