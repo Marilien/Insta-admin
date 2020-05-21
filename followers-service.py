@@ -45,7 +45,7 @@ def login_get_api(username, password, coockie_file):
     # if args.debug:
     #     logger.setLevel(logging.DEBUG)
 
-    print('Client version: {0!s}'.format(client_version))
+    # print('Client version: {0!s}'.format(client_version))
 
     device_id = None
     try:
@@ -53,7 +53,7 @@ def login_get_api(username, password, coockie_file):
         # settings_file = args.settings_file_path
         if not os.path.isfile(settings_file):
             # settings file does not exist
-            print('Unable to find file: {0!s}'.format(settings_file))
+            # print('Unable to find file: {0!s}'.format(settings_file))
 
             # login new
             api = Client(
@@ -67,7 +67,7 @@ def login_get_api(username, password, coockie_file):
         else:
             with open(settings_file) as file_data:
                 cached_settings = json.load(file_data, object_hook=from_json)
-            print('Reusing settings: {0!s}'.format(settings_file))
+            # print('Reusing settings: {0!s}'.format(settings_file))
 
             device_id = cached_settings.get('device_id')
             # reuse auth settings
@@ -95,127 +95,127 @@ def login_get_api(username, password, coockie_file):
         #     device_id=device_id,
         #     on_login=lambda x: onlogin_callback(x, args.settings_file_path))
 
-    except ClientLoginError as e:
-        print('ClientLoginError {0!s}'.format(e))
-        exit(9)
-    except ClientError as e:
-        print('ClientError {0!s} (Code: {1:d}, Response: {2!s})'.format(e.msg, e.code, e.error_response))
-        exit(9)
-    except Exception as e:
-        print('Unexpected Exception: {0!s}'.format(e))
-        exit(99)
+    # except ClientLoginError as e:
+    #     print('ClientLoginError {0!s}'.format(e))
+    #     exit(9)
+    # except ClientError as e:
+    #     print('ClientError {0!s} (Code: {1:d}, Response: {2!s})'.format(e.msg, e.code, e.error_response))
+    #     exit(9)
+    # except Exception as e:
+    #     print('Unexpected Exception: {0!s}'.format(e))
+    #     exit(99)
 
     return api
 
 
-# def get_insta_id(username):
-#     url = "https://www.instagram.com/web/search/topsearch/?context=blended&query=" + username + "&rank_token=0.3953592318270893&count=1"
-#     response = requests.get(url)
-#     respJSON = response.json()
-#     try:
-#         user_id = str(respJSON['users'][0].get("user").get("pk"))
-#         return user_id
-#     except:
-#         return "Unexpected error"
-
-def get_user_info(api, user_name):
+def get_user_info(user_name):
     # uuid = api.generate_uuid()
-    user_info = api.username_info(user_name)
-    return user_info
+    i = 0
+    while True:
+        api = get_api(i)
+        if api is None:
+            return None
+        try:
+            user_info = api.username_info(user_name)
+            return user_info
+        except:
+            i +=1
 
-
-# def get_insta_id(api, user_name):
-#     user_info = get_user_info(api=api, user_name=user_name)
-#
-#     if not user_info.get('user', []).get('is_private', []):
-#         link = 'http://www.instagram.com/' + user_name
-#         response = urlopen(link)
-#         content = str(response.read())
-#         start_pos = content.find('"owner":{"id":"') + len('"owner":{"id":"')
-#         end_pos = content[start_pos:].find('"')
-#         insta_id = content[start_pos:start_pos + end_pos]
-#
-#     else:
-#         # print('Sorry, you are trying to access private account')
-#         return None
-#
-#     return insta_id
-
-
-def get_followers_list(api, user_id, save=True):
+def get_followers_list(user_id, save=True):
 
     # Show when login expires
     # cookie_expiry = api.cookie_jar.auth_expires
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
-    start_time = time()
-    list_foll_len = 0
+    i = 0
+    while True:
+        api = get_api(i)
+        if api is None:
+            print("No possible login accounts")
+            return None
+        try:
+            start_time = time()
+            list_foll_len = 0
 
-    uuid = api.generate_uuid()
-    print("@@@@@@@@@@@@", user_id, uuid)
-    followers = api.user_followers(user_id=user_id, rank_token=uuid)
+            uuid = api.generate_uuid()
+            print("@@@@@@@@@@@@", user_id, uuid)
+            followers = api.user_followers(user_id=user_id, rank_token=uuid)
 
-    # followers = {}
+            updates_followers = []
+            updates_followers.extend(followers.get('users', []))
 
-    updates_followers = []
-    updates_followers.extend(followers.get('users', []))
+            next_max_id = followers.get('next_max_id')
+            while next_max_id:
+                # print(next_max_id)
 
-    next_max_id = followers.get('next_max_id')
-    while next_max_id:
-        print(next_max_id)
+                followers = api.user_followers(user_id=user_id, rank_token=uuid, max_id=next_max_id)
+                # print(followers)
+                # print(len(followers['users']))
+                updates_followers.extend(followers.get('users', []))
+                # if len(updates) >= 30:       # get only first 30 or so
+                #     break
+                next_max_id = followers.get('next_max_id')
 
-        followers = api.user_followers(user_id=user_id, rank_token=uuid, max_id=next_max_id)
-        print(followers)
-        print(len(followers['users']))
-        updates_followers.extend(followers.get('users', []))
-        # if len(updates) >= 30:       # get only first 30 or so
-        #     break
-        next_max_id = followers.get('next_max_id')
+                if save:
+                    with open('data/followers_' + str(user_id) + '.txt', 'w', encoding="utf-8") as file:
+                        for item in updates_followers:
+                            file.write('%s\n' % item['username'])
 
-        if save:
-            with open('data/followers_' + str(user_id) + '.txt', 'w', encoding="utf-8") as file:
-                for item in updates_followers:
-                    file.write('%s\n' % item['username'])
+                print(len(updates_followers))
+                # list_foll_len += len(updates_followers)
+                # print(list_foll_len)
+                print(time() - start_time)
+                sleep(0.01)
 
-        list_foll_len += len(updates_followers)
-        # print(list_foll_len)
-        print(time() - start_time)
-        sleep(0.01)
+            # print('followers all', updates_followers)
+            followers_names = [x['username'] for x in updates_followers]
+            # print('followers names: ', followers_names)
 
-    # print('followers all', updates_followers)
-    followers_names = [x['username'] for x in updates_followers]
-    # print('followers names: ', followers_names)
+            # with open('followers_' + str(user_id) + '.txt', 'w') as file:
+            #     for item in followers_names:
+            #         file.write('%s\n' % item)
+            # print('All ok, list in file')
+
+            # print('Names = ', followers_names)
+            return followers_names
+        except:
+            i += 1
+            print("Get next account", i)
 
 
-
-    # with open('followers_' + str(user_id) + '.txt', 'w') as file:
-    #     for item in followers_names:
-    #         file.write('%s\n' % item)
-    # print('All ok, list in file')
-
-    return followers_names
-
+def get_api(index):
+    # print(MY_USERNAME)
+    # print(MY_PASSWORD)
+    # api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    if index != 0:
+        os.remove(COOCKIE_FILE_PATH)
+    if index >= len(LOGIN_DATA):
+        return None
+    MY_USERNAME = LOGIN_DATA[index].get('MY_USERNAME', [])
+    MY_PASSWORD = LOGIN_DATA[index].get('MY_PASSWORD', [])
+    api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    return api
 
 def followers(username):
-    api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-    user_info = get_user_info(api, username)
+
+    user_info = get_user_info(username)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
 
     if user_info.get('user', []).get('is_private', []):
         return {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
-    else:
-        if followers_len == 0:
-            return {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
-        else:
-            if followers_len > 200000:
-                return {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
-            else:
-                followers_list = get_followers_list(api=api, user_id=user_id)
-                return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
+
+    if followers_len == 0:
+        return {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
+
+    if followers_len > 200000:
+        return {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+
+    followers_list = get_followers_list(user_id=user_id)
+    return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
 
 
-# if __name__ == '__main__':
-#     # start_program_time = time()
-#     followers = followers('alexandramitroshina')
-#     print(followers)
+if __name__ == '__main__':
+    # start_program_time = time()
+    followers = followers('marta.khoma')
+    print(followers)
 #     # print(time() - start_program_time)

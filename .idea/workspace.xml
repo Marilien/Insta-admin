@@ -204,7 +204,7 @@
       <updated>1588877737096</updated>
       <workItem from="1588877738332" duration="34234000" />
       <workItem from="1589538422066" duration="15510000" />
-      <workItem from="1589722795556" duration="8629000" />
+      <workItem from="1589722795556" duration="18219000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -304,7 +304,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589723440522</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Change get followers response">
+      <created>1590066627768</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066627768</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add checking foll_len and privacy">
+      <created>1590066763714</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066763714</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,37 +336,38 @@
     <MESSAGE value="Change type of respone" />
     <MESSAGE value="response" />
     <MESSAGE value="Change get followers response" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change get followers response" />
+    <MESSAGE value="Add checking foll_len and privacy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add checking foll_len and privacy" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590065994708">
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590075887174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1590065994708" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1590066626910">
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1590075887174" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1590066762996">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590066626910" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590066762996" />
     <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1589731547296">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589731547296" />
-    <state width="1237" height="171" key="GridCell.Tab.0.bottom" timestamp="1590066601097">
+    <state width="1237" height="122" key="GridCell.Tab.0.bottom" timestamp="1590076308035">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="171" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590066601097" />
-    <state width="1237" height="171" key="GridCell.Tab.0.center" timestamp="1590066601097">
+    <state width="1237" height="122" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590076308035" />
+    <state width="1237" height="122" key="GridCell.Tab.0.center" timestamp="1590076308035">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="171" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590066601097" />
-    <state width="1237" height="171" key="GridCell.Tab.0.left" timestamp="1590066601097">
+    <state width="1237" height="122" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590076308035" />
+    <state width="1237" height="122" key="GridCell.Tab.0.left" timestamp="1590076308034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="171" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590066601097" />
-    <state width="1237" height="171" key="GridCell.Tab.0.right" timestamp="1590066601097">
+    <state width="1237" height="122" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590076308034" />
+    <state width="1237" height="122" key="GridCell.Tab.0.right" timestamp="1590076308035">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="171" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590066601097" />
+    <state width="1237" height="122" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590076308035" />
     <state x="121" y="50" key="MergeDialog" timestamp="1590066675746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -365,10 +380,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590066639373">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590066768059">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590066639373" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590066768059" />
     <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1589722796303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -380,7 +395,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1589553749087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$followers_service.coverage" NAME="followers-service Coverage Results" MODIFIED="1590066601088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$followers_service.coverage" NAME="followers-service Coverage Results" MODIFIED="1590076308022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$risk_babich_2.coverage" NAME="risk_babich_2 Coverage Results" MODIFIED="1589731609781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
