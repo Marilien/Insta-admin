@@ -208,25 +208,27 @@ def followers(username):
         return cache[username]
     
     user_info = get_user_info(username)
+    print(user_info)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
-    res = {}
+    res = None
     if user_info.get('user', []).get('is_private', []):
-        res =  {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
+        res = {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
 
     if followers_len == 0:
         res = {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
 
     if followers_len > 200000:
-        res = {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+        res =  {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
 
-    followers_list = get_followers_list(user_id=user_id)
-    res = {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
+    if res is None:
+        followers_list = get_followers_list(user_id=user_id)
+        res = {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
     cache[username] = res
     return res
 
 if __name__ == '__main__':
     # start_program_time = time()
-    followers = followers('marta.khoma')
+    followers = followers('marilien_m')
     print(followers)
 #     # print(time() - start_program_time)
