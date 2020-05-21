@@ -12,6 +12,7 @@ from six.moves.urllib.request import urlopen
 from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
 from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
+from cache import cache
 
 try:
     from instagram_private_api import (
@@ -195,24 +196,34 @@ def get_api(index):
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     return api
 
-def followers(username):
+def cache_reset():
+    print('reset cache')
+    cache.clear()
+    return True
 
+def followers(username):
+    print(cache.keys())
+    if username in cache:
+        print('return followers from cache')
+        return cache[username]
+    
     user_info = get_user_info(username)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
-
+    res = {}
     if user_info.get('user', []).get('is_private', []):
-        return {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
+        res =  {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
 
     if followers_len == 0:
-        return {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
+        res = {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
 
     if followers_len > 200000:
-        return {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+        res = {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
 
     followers_list = get_followers_list(user_id=user_id)
-    return {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
-
+    res = {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
+    cache[username] = res
+    return res
 
 if __name__ == '__main__':
     # start_program_time = time()
