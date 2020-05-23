@@ -1,7 +1,7 @@
 import time
 
 
-TTL = 3
+TTL = 120
 
 cache = {}
 
