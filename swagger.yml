@@ -12,7 +12,27 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /followers/{username}:
+
+  /account_info/{username}:
+    get:
+      operationId: followers-service.account_info
+      tags:
+        - "Account info"
+      summary: "The people data structure supported by the server application"
+      description: "Read the list of followers"
+      parameters:
+        - name: username
+          in: path
+          description: Username of account
+          type: string
+          required: True
+      responses:
+        200:
+          description: "Successful get info about user"
+          schema:
+            type: "object"
+
+  /followers/{user_id}:
     get:
       operationId: followers-service.followers
       tags:
@@ -20,9 +40,9 @@ paths:
       summary: "The people data structure supported by the server application"
       description: "Read the list of followers"
       parameters:
-        - name: username
+        - name: user_id
           in: path
-          description: Last name of the person to get from the list
+          description: Personal Instagram user_id
           type: string
           required: True
       responses:
@@ -30,6 +50,7 @@ paths:
           description: "Successful read people list operation"
           schema:
             type: "object"
+
   /cache/reset:
     get:
       operationId: followers-service.cache_reset

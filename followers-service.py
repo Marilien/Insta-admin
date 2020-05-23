@@ -120,10 +120,10 @@ def get_user_info(user_name):
             user_info = api.username_info(user_name)
             return user_info
         except:
-            i +=1
+            i += 1
+
 
 def get_followers_list(user_id, save=True):
-
     # Show when login expires
     # cookie_expiry = api.cookie_jar.auth_expires
     # print('Cookie Expiry: {0!s}'.format(datetime.datetime.fromtimestamp(cookie_expiry).strftime('%Y-%m-%dT%H:%M:%SZ')))
@@ -196,39 +196,85 @@ def get_api(index):
     api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     return api
 
+
 def cache_reset():
     print('reset cache')
     cache.clear()
     return True
 
-def followers(username):
-    print(cache.keys())
-    if username in cache:
-        print('return followers from cache')
-        return cache[username]
-    
+
+def account_info(username):
     user_info = get_user_info(username)
-    print(user_info)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
-    res = None
+
     if user_info.get('user', []).get('is_private', []):
-        res = {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
+        res = {'is_private': True,
+               'num_of_foll': None,
+               'user_id': user_id,
+               'msg': 'Sorry, you are trying to access private account'}
+    else:
+        if followers_len == 0:
+            res = {'is_private': False,
+                   'num_of_foll': 0,
+                   'user_id': user_id,
+                   'msg': 'Account exist'}
 
-    if followers_len == 0:
-        res = {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
+        elif followers_len > 200000:
+            res = {'is_private': False,
+                   'num_of_foll': followers_len,
+                   'user_id': user_id,
+                   'msg': 'Too many followers'}
 
-    if followers_len > 200000:
-        res =  {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+        else:
+            res = {'is_private': False,
+                   'num_of_foll': followers_len,
+                   'user_id': user_id,
+                   'msg': 'Account exist'}
 
-    if res is None:
-        followers_list = get_followers_list(user_id=user_id)
-        res = {'msg': "Account exist", 'num_of_foll': followers_len, 'foll_list': followers_list}
-    cache[username] = res
     return res
+
+
+def followers(user_id):
+    # TODO  ---------------------------------
+    # print(cache.keys())
+    # if username in cache:
+    #     print('return followers from cache')
+    #     return cache[username]
+
+    # user_info = get_user_info(username)
+    # print(user_info)
+    # user_id = user_info.get('user', []).get('pk', [])
+    # followers_len = user_info.get('user', []).get('follower_count', [])
+
+    # res = None
+    # if user_info.get('user', []).get('is_private', []):
+    #     res = {'msg': 'Sorry, you are trying to access private account', 'num_of_foll': None, 'foll_list': None}
+    #
+    # if followers_len == 0:
+    #     res = {'msg': 'Account exist', 'num_of_foll': 0, 'foll_list': None}
+    #
+    # if followers_len > 200000:
+    #     res = {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
+
+    # if res is None:
+    followers_list = get_followers_list(user_id=user_id)
+    res = {'foll_list': followers_list}
+
+    #TODO------------------
+    # cache[username] = res
+
+    return res
+
 
 if __name__ == '__main__':
     # start_program_time = time()
-    followers = followers('marilien_m')
-    print(followers)
+    acc_info = account_info('pythongirl_m')
+    print(acc_info)
+
+    if not acc_info['is_private']:
+        user_id = acc_info['user_id']
+        followers = followers(user_id)
+        print(followers)
+
 #     # print(time() - start_program_time)
