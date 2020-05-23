@@ -18,6 +18,7 @@ def get_account_info(username):
     and (current_time - cache[username]['updated_at'] <= TTL) 
     and 'account_info' in cache[username]
   ):
+    print('return account_info from cache')
     return cache[username]['account_info']
 
 def set_followers(username, followers):
@@ -33,6 +34,7 @@ def get_followers(username):
     and (current_time - cache[username]['updated_at'] <= TTL) 
     and 'followers' in cache[username]
   ):
+    print('return followers from cache')
     return cache[username]['followers']
 
 set_account_info('test', {'private': True})
