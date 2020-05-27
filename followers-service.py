@@ -12,7 +12,7 @@ from six.moves.urllib.request import urlopen
 from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
 from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
-from cache import cache
+from cache import set_account_info, get_account_info, set_followers, get_followers
 
 try:
     from instagram_private_api import (
@@ -34,16 +34,36 @@ def login_get_api(username, password, coockie_file):
     logger = logging.getLogger('instagram_private_api')
     logger.setLevel(logging.WARNING)
 
+    # # Example command:
+    # # python examples/followers-service.py -u "yyy" -p "zzz" -settings "test_credentials.json"
+    # parser = argparse.ArgumentParser(description='login callback and save settings demo')
+    # parser.add_argument('-settings', '--settings', dest='settings_file_path', type=str, required=True)
+    # parser.add_argument('-u', '--username', dest='username', type=str, required=True)
+    # parser.add_argument('-p', '--password', dest='password', type=str, required=True)
+    # parser.add_argument('-debug', '--debug', action='store_true')
+    #
+    # args = parser.parse_args()
+    # if args.debug:
+    #     logger.setLevel(logging.DEBUG)
+
+    # print('Client version: {0!s}'.format(client_version))
 
     device_id = None
     try:
         settings_file = coockie_file
-
+        # settings_file = args.settings_file_path
         if not os.path.isfile(settings_file):
+            # settings file does not exist
+            # print('Unable to find file: {0!s}'.format(settings_file))
+
             # login new
             api = Client(
                 username, password,
                 on_login=lambda x: onlogin_callback(x, coockie_file))
+
+            # api = Client(
+            #     args.username, args.password,
+            #     on_login=lambda x: onlogin_callback(x, args.settings_file_path))
 
         else:
             with open(settings_file) as file_data:
@@ -55,6 +75,10 @@ def login_get_api(username, password, coockie_file):
             api = Client(
                 username, password,
                 settings=cached_settings)
+
+            # api = Client(
+            #     args.username, args.password,
+            #     settings=cached_settings)
 
     except (ClientCookieExpiredError, ClientLoginRequiredError) as e:
         print('ClientCookieExpiredError/ClientLoginRequiredError: {0!s}'.format(e))
@@ -95,9 +119,6 @@ def get_user_info(user_name):
         try:
             user_info = api.username_info(user_name)
             return user_info
-        except ClientError as e:
-            if e.code == 404:
-                return None
         except:
             i += 1
 
@@ -117,7 +138,6 @@ def get_followers_list(user_id, save=True):
             list_foll_len = 0
 
             uuid = api.generate_uuid()
-            print("@@@@@@@@@@@@", user_id, uuid)
             followers = api.user_followers(user_id=user_id, rank_token=uuid)
 
             updates_followers = []
@@ -183,42 +203,38 @@ def cache_reset():
 
 
 def account_info(username):
+    stored_account_info = get_account_info(username)
+    if (stored_account_info is not None):
+        return stored_account_info
     user_info = get_user_info(username)
-
-    if user_info is None:
-        print(user_info)
-        return {'is_private': None,
-                'num_of_foll': None,
-                'user_id': None,
-                'msg': 'Account doesn\'t exist'}
-
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
 
     if user_info.get('user', []).get('is_private', []):
-        return {'is_private': True,
-                'num_of_foll': None,
-                'user_id': user_id,
-                'msg': 'Sorry, you are trying to access private account'}
+        res = {'is_private': True,
+               'num_of_foll': None,
+               'user_id': user_id,
+               'msg': 'Sorry, you are trying to access private account'}
     else:
         if followers_len == 0:
-            return {'is_private': False,
-                    'num_of_foll': 0,
-                    'user_id': user_id,
-                    'msg': 'Account exist'}
+            res = {'is_private': False,
+                   'num_of_foll': 0,
+                   'user_id': user_id,
+                   'msg': 'Account exist'}
 
         elif followers_len > 200000:
-            return {'is_private': False,
-                    'num_of_foll': followers_len,
-                    'user_id': user_id,
-                    'msg': 'Too many followers'}
+            res = {'is_private': False,
+                   'num_of_foll': followers_len,
+                   'user_id': user_id,
+                   'msg': 'Too many followers'}
 
         else:
-            return {'is_private': False,
-                    'num_of_foll': followers_len,
-                    'user_id': user_id,
-                    'msg': 'Account exist'}
-
+            res = {'is_private': False,
+                   'num_of_foll': followers_len,
+                   'user_id': user_id,
+                   'msg': 'Account exist'}
+    set_account_info(username, res)
+    return res
 
 
 def followers(user_id):
@@ -244,23 +260,23 @@ def followers(user_id):
     #     res = {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
 
     # if res is None:
+    stored_followers = get_followers(user_id)
+    if (stored_followers is not None):
+        return stored_followers
     followers_list = get_followers_list(user_id=user_id)
     res = {'foll_list': followers_list}
-
-    # TODO------------------
-    # cache[username] = res
-
+    set_followers(user_id, res)
     return res
 
 
 if __name__ == '__main__':
     # start_program_time = time()
-    acc_info = account_info('serhii_tets')
+    acc_info = account_info('pythongirl_m')
     print(acc_info)
 
-    # if not acc_info['is_private']:
-    #     user_id = acc_info['user_id']
-    #     followers = followers(user_id)
-    #     print(followers)
+    if not acc_info['is_private']:
+        user_id = acc_info['user_id']
+        followers = followers(user_id)
+        print(followers)
 
 #     # print(time() - start_program_time)
