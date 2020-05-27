@@ -271,7 +271,7 @@ def followers(user_id):
 
 if __name__ == '__main__':
     # start_program_time = time()
-    acc_info = account_info('pythongirl_m')
+    acc_info = account_info('mongolo4ka_')
     print(acc_info)
 
     if not acc_info['is_private']:
