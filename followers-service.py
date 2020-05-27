@@ -12,7 +12,7 @@ from six.moves.urllib.request import urlopen
 from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
 from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
-from cache import set_account_info, get_account_info, set_followers, get_followers
+#from cache import set_account_info, get_account_info, set_followers, get_followers
 
 try:
     from instagram_private_api import (
@@ -197,15 +197,15 @@ def get_api(index):
 
 
 def cache_reset():
-    print('reset cache')
-    cache.clear()
+#     print('reset cache')
+#     cache.clear()
     return True
 
 
 def account_info(username):
-    stored_account_info = get_account_info(username)
-    if (stored_account_info is not None):
-        return stored_account_info
+    #stored_account_info = get_account_info(username)
+    #if (stored_account_info is not None):
+    #    return stored_account_info
     user_info = get_user_info(username)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
@@ -233,7 +233,7 @@ def account_info(username):
                    'num_of_foll': followers_len,
                    'user_id': user_id,
                    'msg': 'Account exist'}
-    set_account_info(username, res)
+    #set_account_info(username, res)
     return res
 
 
@@ -260,12 +260,12 @@ def followers(user_id):
     #     res = {'msg': 'Too many followers', 'num_of_foll': followers_len, 'foll_list': None}
 
     # if res is None:
-    stored_followers = get_followers(user_id)
-    if (stored_followers is not None):
-        return stored_followers
+    #stored_followers = get_followers(user_id)
+    #if (stored_followers is not None):
+    #    return stored_followers
     followers_list = get_followers_list(user_id=user_id)
     res = {'foll_list': followers_list}
-    set_followers(user_id, res)
+    #set_followers(user_id, res)
     return res
 
 
