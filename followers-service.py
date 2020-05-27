@@ -12,7 +12,7 @@ from six.moves.urllib.request import urlopen
 from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
 from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
-from cache import set_account_info, get_account_info, set_followers, get_followers
+#from cache import set_account_info, get_account_info, set_followers, get_followers
 
 try:
     from instagram_private_api import (
@@ -197,8 +197,8 @@ def get_api(index):
 
 
 def cache_reset():
-    print('reset cache')
-    cache.clear()
+#     print('reset cache')
+#     cache.clear()
     return True
 
 
