@@ -28,7 +28,7 @@ def get_account_info(username):
 def get_followers(user_id):
     from followers_service import followers
     job = q.enqueue(followers, user_id)
-    return jon.get_id()
+    return job.get_id()
 
 @app.route('/task/<url>')
 @cross_origin()
