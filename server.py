@@ -4,6 +4,7 @@ from flask import (Flask,
 
 from flask_cors import  cross_origin
 from rq import Queue
+from rq.job import Job
 from worker import conn
 
 
