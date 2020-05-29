@@ -27,7 +27,7 @@ def get_account_info(username):
 def get_followers(user_id):
     return followers(user_id)
 
-@app.route('/task/<url>'):
+@app.route('/task/<url>')
 @cross_origin()
 def handle_task(url):
     from utils import count_words_at_url
