@@ -1,7 +1,7 @@
 from flask import (Flask,
     render_template
 )
-
+from flask import jsonify
 from flask_cors import  cross_origin
 from rq import Queue
 from rq.job import Job
@@ -41,8 +41,7 @@ def handle_task(url):
 def get_results(job_key):
     job = Job.fetch(job_key, connection=conn)
     if job.is_finished:
-        print(job.result)
-        return 200
+        return jsonify(job.result)
     else:
         return "Nay!", 202
 
