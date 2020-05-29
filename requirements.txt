@@ -6,7 +6,7 @@ automium==0.2.6
 automium-web==0.1.1
 autopep8==1.5.2
 backcall==0.1.0
-bleach==3.1.0
+bleach==3.1.4
 certifi==2020.4.5.1
 chardet==3.0.4
 Click==7.0
