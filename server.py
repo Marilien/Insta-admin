@@ -2,32 +2,48 @@ from flask import (Flask,
     render_template
 )
 
-from flask_cors import CORS, cross_origin
-import connexion
+from flask_cors import  cross_origin
+from rq import Queue
+from worker import conn
 
-# Create the application instance
-app = connexion.App(__name__, specification_dir='./')
-# Read the swagger.yml file to configure the endpoints
-app.add_api('swagger.yml')
-CORS(app.app)
 
-# Create a URL route in our application for "/"
+from followers_service import account_info, followers
+
+q = Queue(connection=conn)
+app = Flask(__name__)
 @app.route('/')
 @cross_origin()
-# @app.route("/api/v1/users")
 def home():
-    """
-    This function just responds to the browser ULR
-    localhost:5000/
-
-    :return:        the rendered template 'home.html'
-    """
     return render_template('home.html')
 
+@app.route('/api/account_info/<username>')
+@cross_origin()
+def get_account_info(username):
+    return account_info(username)
 
-# If we're running in stand alone mode, run the application
+    
+@app.route('/api/followers/<user_id>')
+@cross_origin()
+def get_followers(user_id):
+    return followers(user_id)
 
+@app.route('/task/<url>'):
+@cross_origin()
+def handle_task(url):
+    from utils import count_words_at_url
+    job = q.enqueue(count_words_at_url, url)
+    return job.get_id()
+
+
+@app.route("/results/<job_key>")
+@cross_origin()
+def get_results(job_key):
+    job = Job.fetch(job_key, connection=conn)
+    if job.is_finished:
+        print(job.result)
+        return 200
+    else:
+        return "Nay!", 202
 
 if __name__ == '__main__':
     app.run(port=80, debug=True)
-    # app.run(host='0.0.0.0', port=5000, debug=True)
