@@ -2,16 +2,18 @@ from flask import (Flask,
     render_template
 )
 from flask import jsonify
+from flask_socketio import SocketIO, send, emit
 from flask_cors import  cross_origin
-from rq import Queue
-from rq.job import Job
-from worker import conn
+# from rq import Queue
+# from rq.job import Job
+# from worker import conn
 
 
 from followers_service import account_info, followers
 
-q = Queue(connection=conn)
+# q = Queue(connection=conn)
 app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
 @app.route('/')
 @cross_origin()
 def home():
@@ -26,30 +28,47 @@ def get_account_info(username):
 @cross_origin()
 def get_followers(user_id):
     return followers(user_id)
-    
-@app.route('/api/1/followers/<user_id>')
-@cross_origin()
-def get_delayed_followers(user_id):
-    from followers_service import followers
-    job = q.enqueue(followers, user_id)
-    return job.get_id()
 
-@app.route('/task/<url>')
-@cross_origin()
-def handle_task(url):
-    from utils import count_words_at_url
-    job = q.enqueue(count_words_at_url, url)
-    return job.get_id()
+@socketio.on('followers')
+def handle_followers(user_id):
+    # print('answer from backend')
+    # emit('followers_response', user_id)
+    followers(user_id)
 
 
-@app.route("/results/<job_key>")
-@cross_origin()
-def get_results(job_key):
-    job = Job.fetch(job_key, connection=conn)
-    if job.is_finished:
-        return jsonify(job.result)
-    else:
-        return "Nay!", 202
+
+# @socketio.on('connect')
+# def test_connect():
+#     emit('other_client_connected', broadcast=True)
+
+# @socketio.on('disconnect')
+# def test_disconnect():
+#     print('Client disconnected')
+# @app.route('/api/1/followers/<user_id>')
+# @cross_origin()
+# def get_followers(user_id):
+#     from followers_service import followers
+#     job = q.enqueue(followers, user_id)
+#     return job.get_id()
+
+# @app.route('/task/<url>')
+# @cross_origin()
+# def handle_task(url):
+#     from utils import count_words_at_url
+#     job = q.enqueue(count_words_at_url, url)
+#     return job.get_id()
+
+
+# @app.route("/results/<job_key>")
+# @cross_origin()
+# def get_results(job_key):
+#     job = Job.fetch(job_key, connection=conn)
+#     if job.is_finished:
+#         return jsonify(job.result)
+#     else:
+#         return "Nay!", 202
 
 if __name__ == '__main__':
-    app.run(port=80, debug=True)
+    socketio.run(app, debug=True)
+## marta.khoma 1424071908
+## mongolo4ka_ 9264496810

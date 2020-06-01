@@ -6,6 +6,7 @@ import logging
 import argparse
 from time import time, sleep
 import requests
+from flask_socketio import emit
 
 import instaloader
 from six.moves.urllib.request import urlopen
@@ -151,6 +152,7 @@ def get_followers_list(user_id, save=True):
                 # print(followers)
                 # print(len(followers['users']))
                 updates_followers.extend(followers.get('users', []))
+                event('followers_received', len(updates_followers))
                 # if len(updates) >= 30:       # get only first 30 or so
                 #     break
                 next_max_id = followers.get('next_max_id')
@@ -266,7 +268,7 @@ def followers(user_id):
     followers_list = get_followers_list(user_id=user_id)
     res = {'foll_list': followers_list}
     #set_followers(user_id, res)
-    return res
+    emit('followers_response', res)
 
 
 if __name__ == '__main__':
