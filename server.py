@@ -3,7 +3,7 @@ from flask import (Flask,
 )
 from flask import jsonify
 from flask_socketio import SocketIO, send, emit
-from flask_cors import  cross_origin
+from flask_cors import cross_origin, CORS
 # from rq import Queue
 # from rq.job import Job
 # from worker import conn
@@ -13,6 +13,7 @@ from followers_service import account_info, followers
 
 # q = Queue(connection=conn)
 app = Flask(__name__)
+CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 @app.route('/')
 @cross_origin()
