@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/Insta_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Insta_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/followers_1424071908.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/followers_1424071908.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/followers_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -179,6 +177,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -196,6 +206,7 @@
       <workItem from="1590582516374" duration="967000" />
       <workItem from="1590583599766" duration="1846000" />
       <workItem from="1591277791504" duration="5891000" />
+      <workItem from="1591304142817" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -334,7 +345,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -372,10 +383,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-6" y="50" width="1291" height="581" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1590583390355" />
-    <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1589731547296">
+    <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1591304380736">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589731547296" />
+    <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1591304380736" />
     <state width="1163" height="57" key="GridCell.Tab.0.bottom" timestamp="1591299279779">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
@@ -404,10 +415,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="354" y="56" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1590066675759" />
-    <state x="161" y="0" key="SettingsEditor" timestamp="1589460398306">
+    <state x="161" y="0" key="SettingsEditor" timestamp="1591304248457">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
+    <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1591304248457" />
     <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1591299350693">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
@@ -432,11 +443,11 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Insta_project$followers_service.coverage" NAME="followers-service Coverage Results" MODIFIED="1590584383691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1590243955006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$risk_babich_2.coverage" NAME="risk_babich_2 Coverage Results" MODIFIED="1589731609781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Insta_admin$followers_service.coverage" NAME="followers_service Coverage Results" MODIFIED="1591299279770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

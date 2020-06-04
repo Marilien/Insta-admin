@@ -190,7 +190,7 @@ def get_api(index):
         return None
     MY_USERNAME = LOGIN_DATA[index].get('MY_USERNAME', [])
     MY_PASSWORD = LOGIN_DATA[index].get('MY_PASSWORD', [])
-    print(MY_USERNAME,MY_PASSWORD)
+    print(MY_USERNAME, MY_PASSWORD)
 
     try:
         api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
@@ -278,7 +278,7 @@ def followers(user_id):
 
 if __name__ == '__main__':
     # start_program_time = time()
-    acc_info = account_info('marta.khoma')
+    acc_info = account_info('serhii_stets')
     print(acc_info)
 
     if not acc_info['is_private']:

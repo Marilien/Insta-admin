@@ -11,7 +11,9 @@
 # MY_PASSWORD = 'testproject'
 
 LOGIN_DATA = [
-    {"MY_USERNAME": "_PyQt_", "MY_PASSWORD": "Researchthat1please"},
+    {"MY_USERNAME": "instapr2020", "MY_PASSWORD": "inst2020"},
+    {"MY_USERNAME": "instaadmin999", "MY_PASSWORD": "inst999"},
+
     {"MY_USERNAME": "tes_tproject", "MY_PASSWORD": "testproject"},
     {"MY_USERNAME": "masha24484", "MY_PASSWORD": "m24484"},
     {"MY_USERNAME": "instaadmin313", "MY_PASSWORD": "instaadmin"}
