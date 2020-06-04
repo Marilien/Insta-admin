@@ -270,14 +270,41 @@ def followers(user_id):
     res = {'foll_list': followers_list}
     #set_followers(user_id, res)
 
-    emit('followers_response', res)
+    # emit('followers_response', res)
 
-    # return res
+    return res
+
+
+def get_cross_list(list_of_lists):
+    print(type(list_of_lists))
+    if not isinstance(list_of_lists, list) and len(list_of_lists < 1):
+        response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
+    else:
+        cross_list_ = list_of_lists[0]
+        for element in list_of_lists:
+            if element != cross_list_:
+                cross_list_ = list(set(cross_list_) & set(element))
+        response = {'len_of_cross_list': len(cross_list_), 'cross_list': cross_list_, 'msg': 'Success'}
+
+    emit('cross_list_response', response)
+
+    # return response
+
 
 
 
 if __name__ == '__main__':
+    # list_one = ['anastasiiaonatii', 'dmitrenkovitalii', 'denshcherbak', 'ejayy.official', 'sava_z', 'obi_van_kenobi_van', 'expelz', 'anastasiia_bogdanov_', 'adedashka', 'oldhouse_bakery', 'ivosaca', 'alla.vlayko', 'nata.cvetaeva', 'kqllly', 'marilien_m', 'antony_drovalev']
+    # list_second = ['ivosaca', 'alla.vlayko', 'nata.cvetaeva', 'kqllly', 'marilien_m', 'antony_drovalev', 'bladiclab', 'alenka.stets', 'lazar_ira', 'fowiflowi', 'smyarga', 'k_aarrtt', 'mandrikm', 'persik1698', 'beatkafasi', 'k_voropaieva', 'mashakondratenko_', 'v_butovskyi', 'svetik3678', 'igorrr._', 'sazonova__m', 'nastya_rybchenko', 'mrvadamas', 'murmur_mari_', 'kolyayurchenko']
+    # third_list = ['kqllly', 'antony_drovalev', 'marilien_m', 'nata.cvetaeva', 'ivosaca']
+    # list_of_lists = [list_one, list_second, third_list]
+    #
+    # cross_list = get_cross_list('jhvkckt')
+    # print(cross_list)
+
+
     # start_program_time = time()
+    # acc_info = account_info('mur_mur_mash')
     acc_info = account_info('serhii_stets')
     print(acc_info)
 
