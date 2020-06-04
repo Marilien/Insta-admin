@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="Separete function followers() to account_info() and followers()">
+      <change beforePath="$PROJECT_DIR$/.idea/Insta_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Insta_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/followers-service.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers-service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/followers_1424071908.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/followers_1424071908.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/followers_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,25 +29,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Users\Maria\PycharmProjects\Insta_project\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1bakkt7JxnpGBwmn1PIsrn1hAtH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/risk_babich_2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,7 +58,7 @@
       <recent name="C:\Users\Maria\PycharmProjects\Insta_project\instagram_private_api_lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.followers-service">
+  <component name="RunManager" selected="Python.followers_service">
     <configuration name="example_get_user_id (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Insta_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,28 +81,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="example_get_user_id" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Insta_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Maria\PycharmProjects\Insta_project\examples\example_get_user_id.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="followers-service" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Insta_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,6 +95,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/followers-service.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="followers_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Insta_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../untitled/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/followers_service.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,25 +171,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.followers_service" />
         <item itemvalue="Python.followers-service" />
         <item itemvalue="Python.server" />
         <item itemvalue="Python.risk_babich_2" />
         <item itemvalue="Python.example_get_user_id (1)" />
-        <item itemvalue="Python.example_get_user_id" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -211,6 +195,7 @@
       <workItem from="1590240949811" duration="8451000" />
       <workItem from="1590582516374" duration="967000" />
       <workItem from="1590583599766" duration="1846000" />
+      <workItem from="1591277791504" duration="5891000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -349,7 +334,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -370,10 +355,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Separete function followers() to account_info() and followers()" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590075887174">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591297375103">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1590075887174" />
+    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.34.1853.1046@67.34.1853.1046" timestamp="1591297375103" />
+    <state x="589" y="57" width="798" height="997" key="#followers_service" timestamp="1591281079757">
+      <screen x="67" y="34" width="1853" height="1046" />
+    </state>
+    <state x="589" y="57" width="798" height="997" key="#followers_service/67.34.1853.1046@67.34.1853.1046" timestamp="1591281079757" />
     <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1590583673976">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -386,22 +376,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1589731547296" />
-    <state width="1237" height="65" key="GridCell.Tab.0.bottom" timestamp="1590584383707">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1163" height="57" key="GridCell.Tab.0.bottom" timestamp="1591299279779">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state width="1237" height="65" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590584383707" />
-    <state width="1237" height="65" key="GridCell.Tab.0.center" timestamp="1590584383707">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1163" height="57" key="GridCell.Tab.0.bottom/67.34.1853.1046@67.34.1853.1046" timestamp="1591299279779" />
+    <state width="1163" height="57" key="GridCell.Tab.0.center" timestamp="1591299279779">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state width="1237" height="65" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590584383707" />
-    <state width="1237" height="65" key="GridCell.Tab.0.left" timestamp="1590584383706">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1163" height="57" key="GridCell.Tab.0.center/67.34.1853.1046@67.34.1853.1046" timestamp="1591299279779" />
+    <state width="1163" height="57" key="GridCell.Tab.0.left" timestamp="1591299279779">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state width="1237" height="65" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590584383706" />
-    <state width="1237" height="65" key="GridCell.Tab.0.right" timestamp="1590584383707">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1163" height="57" key="GridCell.Tab.0.left/67.34.1853.1046@67.34.1853.1046" timestamp="1591299279779" />
+    <state width="1163" height="57" key="GridCell.Tab.0.right" timestamp="1591299279779">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state width="1237" height="65" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590584383707" />
+    <state width="1163" height="57" key="GridCell.Tab.0.right/67.34.1853.1046@67.34.1853.1046" timestamp="1591299279779" />
     <state x="121" y="50" key="MergeDialog" timestamp="1590066675746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -414,10 +408,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589460398306" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1590244096513">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1591299350693">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590244096513" />
+    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2/67.34.1853.1046@67.34.1853.1046" timestamp="1591299350693" />
     <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1590582689560">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -436,11 +431,12 @@
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1589542201954" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1590243955006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Insta_project$followers_service.coverage" NAME="followers-service Coverage Results" MODIFIED="1590584383691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/Insta_project$risk_babich_2.coverage" NAME="risk_babich_2 Coverage Results" MODIFIED="1589731609781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1590243955006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$risk_babich_2.coverage" NAME="risk_babich_2 Coverage Results" MODIFIED="1589731609781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
+    <SUITE FILE_PATH="coverage/Insta_admin$followers_service.coverage" NAME="followers_service Coverage Results" MODIFIED="1591299279770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
   </component>
 </project>

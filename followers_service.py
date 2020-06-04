@@ -1,18 +1,12 @@
 import json
-import codecs
-import datetime
-import os.path
 import logging
-import argparse
+import os.path
 from time import time, sleep
-import requests
-from flask_socketio import emit
 
-import instaloader
-from six.moves.urllib.request import urlopen
-from instagram_private_api_lib.examples.savesettings_logincallback import to_json, from_json, onlogin_callback
-from instagram_private_api.errors import ClientThrottledError
 from constants_local import *
+from instagram_private_api_lib.examples.savesettings_logincallback import from_json, onlogin_callback
+from flask_socketio import SocketIO, send, emit
+
 #from cache import set_account_info, get_account_info, set_followers, get_followers
 
 try:
@@ -152,7 +146,9 @@ def get_followers_list(user_id, save=True):
                 # print(followers)
                 # print(len(followers['users']))
                 updates_followers.extend(followers.get('users', []))
-                event('followers_received', len(updates_followers))
+
+                # event('followers_received', len(updates_followers))
+
                 # if len(updates) >= 30:       # get only first 30 or so
                 #     break
                 next_max_id = followers.get('next_max_id')
@@ -194,7 +190,12 @@ def get_api(index):
         return None
     MY_USERNAME = LOGIN_DATA[index].get('MY_USERNAME', [])
     MY_PASSWORD = LOGIN_DATA[index].get('MY_PASSWORD', [])
-    api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    print(MY_USERNAME,MY_PASSWORD)
+
+    try:
+        api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    except:
+        return None
     return api
 
 
@@ -268,12 +269,16 @@ def followers(user_id):
     followers_list = get_followers_list(user_id=user_id)
     res = {'foll_list': followers_list}
     #set_followers(user_id, res)
+
     emit('followers_response', res)
+
+    # return res
+
 
 
 if __name__ == '__main__':
     # start_program_time = time()
-    acc_info = account_info('mongolo4ka_')
+    acc_info = account_info('marta.khoma')
     print(acc_info)
 
     if not acc_info['is_private']:
