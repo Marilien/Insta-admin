@@ -270,9 +270,9 @@ def followers(user_id):
     res = {'foll_list': followers_list}
     #set_followers(user_id, res)
 
-    # emit('followers_response', res)
+    emit('followers_response', res)
 
-    return res
+    # return res
 
 
 def get_cross_list(list_of_lists):
