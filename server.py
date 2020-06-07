@@ -9,7 +9,7 @@ from flask_cors import cross_origin, CORS
 # from worker import conn
 
 
-from followers_service import account_info, followers
+from followers_service import account_info, followers, get_multiple_list_followers
 
 # q = Queue(connection=conn)
 app = Flask(__name__)
@@ -35,6 +35,13 @@ def handle_followers(user_id):
     # print('answer from backend')
     # emit('followers_response', user_id)
     followers(user_id)
+
+
+@socketio.on('get_multiple_list_followers')
+def handle_multiple_followers(list_of_usedids):
+    # print('answer from backend')
+    # emit('followers_response', user_id)
+    get_multiple_list_followers(list_of_usedids)
 
 
 
