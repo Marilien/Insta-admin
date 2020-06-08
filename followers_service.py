@@ -275,6 +275,8 @@ def followers(user_id):
 
 
 def get_accounts_info(list_of_usernames):
+    list_of_usernames = list_of_usernames.split('&')
+    # print(list_of_usernames)
     if not isinstance(list_of_usernames, list) and len(list_of_usernames < 2):
         response = {'msg': 'Please, put at least two user_names', 'number_of_all_foll': None}
     else:
@@ -292,7 +294,7 @@ def get_accounts_info(list_of_usernames):
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
         response = {'msg': check_result, 'number_of_all_foll': sum_of_followers}
     emit('accounts_info', response)
-    return response
+    # return response
 
 
 def get_multiple_list_followers(list_of_usedids):
@@ -340,31 +342,31 @@ if __name__ == '__main__':
     # acc_info = account_info('mur_mur_mash')
 
     #
-    user_names = ['serhii_stets', 'mongolo4ka']
+    user_names = 'serhii_stets&mongolo4ka'
     accounts_info = get_accounts_info(user_names)
     print(accounts_info)
 
 
 
-    acc_info_first = account_info('serhii_stets')
-    print(acc_info_first)
-    if not acc_info_first['is_private']:
-        user_id_first = acc_info_first['user_id']
-
-    acc_info_second = account_info('mongolo4ka')
-    print(acc_info_second)
-    if not acc_info_first['is_private']:
-        user_id_second = acc_info_second['user_id']
+    # acc_info_first = account_info('serhii_stets')
+    # print(acc_info_first)
+    # if not acc_info_first['is_private']:
+    #     user_id_first = acc_info_first['user_id']
     #
-    # acc_info_third = account_info('alenka.stets')
-    # print(acc_info_third)
-    # if not acc_info_third['is_private']:
-    #     user_id_third = acc_info_third['user_id']
-    #
-    list_user_ids = [user_id_first, user_id_second]
-    print(list_user_ids)
-    #
-    cross_list = get_multiple_list_followers(list_user_ids)
-    print(cross_list)
+    # acc_info_second = account_info('mongolo4ka')
+    # print(acc_info_second)
+    # if not acc_info_first['is_private']:
+    #     user_id_second = acc_info_second['user_id']
+    # #
+    # # acc_info_third = account_info('alenka.stets')
+    # # print(acc_info_third)
+    # # if not acc_info_third['is_private']:
+    # #     user_id_third = acc_info_third['user_id']
+    # #
+    # list_user_ids = [user_id_first, user_id_second]
+    # print(list_user_ids)
+    # #
+    # cross_list = get_multiple_list_followers(list_user_ids)
+    # print(cross_list)
 
 #     # print(time() - start_program_time)
