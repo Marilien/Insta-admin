@@ -45,7 +45,7 @@ def handle_multiple_followers(list_of_usedids):
 
 
 @socketio.on('get_accounts_info')
-def handle_multiple_followers(list_of_usernames):
+def handle_accounts_info(list_of_usernames):
     # print('answer from backend')
     # emit('followers_response', user_id)
     get_accounts_info(list_of_usernames)
