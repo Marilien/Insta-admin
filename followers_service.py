@@ -274,8 +274,29 @@ def followers(user_id):
     # return res
 
 
+def get_accounts_info(list_of_usernames):
+    if not isinstance(list_of_usernames, list) and len(list_of_usernames < 2):
+        response = {'msg': 'Please, put at least two user_names', 'number_of_all_foll': None}
+    else:
+        check_result = 'Success'
+        sum_of_followers = 0
+        for username in list_of_usernames:
+            user_info = get_user_info(username)
+            if user_info.get('user', []).get('is_private', []):
+                check_result = 'Private'
+                sum_of_followers += user_info.get('user', []).get('follower_count', [])
+            elif user_info.get('user', []).get('follower_count', []) < 1:
+                check_result = 'No_foll'
+                sum_of_followers += user_info.get('user', []).get('follower_count', [])
+            else:
+                sum_of_followers += user_info.get('user', []).get('follower_count', [])
+        response = {'msg': check_result, 'number_of_all_foll': sum_of_followers}
+    emit('accounts_info', response)
+    return response
+
+
 def get_multiple_list_followers(list_of_usedids):
-    if not isinstance(list_of_usedids, list) and len(list_of_usedids < 1):
+    if not isinstance(list_of_usedids, list) and len(list_of_usedids < 2):
         response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
     else:
         cross_list = get_followers_list(user_id=list_of_usedids[0])
@@ -283,14 +304,17 @@ def get_multiple_list_followers(list_of_usedids):
             list_single_user_followers = get_followers_list(user_id=list_of_usedids[i])
             cross_list = list(set(cross_list) & set(list_single_user_followers))
 
-        response = {'len_of_cross_list': len(cross_list), 'cross_list': cross_list, 'msg': 'Success'}
+        if len(cross_list) < 1:
+            response = {'len_of_cross_list': len(cross_list), 'cross_list': None, 'msg': 'There are no similar followers'}
+        else:
+            response = {'len_of_cross_list': len(cross_list), 'cross_list': cross_list, 'msg': 'Success'}
     emit('cross_list_response', response)
     # return response
 
 
 def get_cross_list(list_of_lists):
     print(type(list_of_lists))
-    if not isinstance(list_of_lists, list) and len(list_of_lists < 1):
+    if not isinstance(list_of_lists, list) and len(list_of_lists < 2):
         response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
     else:
         cross_list_ = list_of_lists[0]
@@ -315,24 +339,31 @@ if __name__ == '__main__':
     # start_program_time = time()
     # acc_info = account_info('mur_mur_mash')
 
+    #
+    user_names = ['serhii_stets', 'mongolo4ka']
+    accounts_info = get_accounts_info(user_names)
+    print(accounts_info)
+
+
+
     acc_info_first = account_info('serhii_stets')
     print(acc_info_first)
     if not acc_info_first['is_private']:
         user_id_first = acc_info_first['user_id']
 
-    acc_info_second = account_info('lazar_ira')
+    acc_info_second = account_info('mongolo4ka')
     print(acc_info_second)
     if not acc_info_first['is_private']:
         user_id_second = acc_info_second['user_id']
-
-    acc_info_third = account_info('alenka.stets')
-    print(acc_info_third)
-    if not acc_info_third['is_private']:
-        user_id_third = acc_info_third['user_id']
-
-    list_user_ids = [user_id_first, user_id_second, user_id_third]
+    #
+    # acc_info_third = account_info('alenka.stets')
+    # print(acc_info_third)
+    # if not acc_info_third['is_private']:
+    #     user_id_third = acc_info_third['user_id']
+    #
+    list_user_ids = [user_id_first, user_id_second]
     print(list_user_ids)
-
+    #
     cross_list = get_multiple_list_followers(list_user_ids)
     print(cross_list)
 
