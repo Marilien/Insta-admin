@@ -23,6 +23,9 @@ LOGIN_DATA = [
     {"MY_USERNAME": "instaadmin999", "MY_PASSWORD": "inst999"},
     {"MY_USERNAME": "tes_tproject", "MY_PASSWORD": "testproject"},
     {"MY_USERNAME": "masha24484", "MY_PASSWORD": "m24484"},
+    {"MY_USERNAME": "accfortest2020", "MY_PASSWORD": "acc2020"},
+    {"MY_USERNAME": "accfortest20201", "MY_PASSWORD": "acc20201"},
+    {"MY_USERNAME": "accfortest20202", "MY_PASSWORD": "acc20202"}
 ]
 
 
