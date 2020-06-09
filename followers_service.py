@@ -305,6 +305,7 @@ def get_accounts_info(list_of_usernames):
 
 
 def get_multiple_list_followers(list_of_usedids):
+    list_of_usedids = list_of_usedids.split('&')
     if not isinstance(list_of_usedids, list) and len(list_of_usedids < 2):
         response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
     else:
