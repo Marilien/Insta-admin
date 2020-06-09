@@ -5,9 +5,6 @@ from time import time, sleep
 
 from constants_local import *
 from instagram_private_api_lib.examples.savesettings_logincallback import from_json, onlogin_callback
-from flask_socketio import SocketIO, send, emit
-
-# from cache import set_account_info, get_account_info, set_followers, get_followers
 
 try:
     from instagram_private_api import (
@@ -197,13 +194,6 @@ def get_api(index):
         return None
     return api
 
-
-def cache_reset():
-    #     print('reset cache')
-    #     cache.clear()
-    return True
-
-
 def account_info(username):
     # stored_account_info = get_account_info(username)
     # if (stored_account_info is not None):
@@ -271,8 +261,8 @@ def followers(user_id):
     res = {'foll_list': followers_list}
     # set_followers(user_id, res)
 
-    emit('followers_response', res)
-    # return res
+    # emit('followers_response', res)
+    return res
 
 
 def get_accounts_info(list_of_usernames):
@@ -317,8 +307,8 @@ def get_multiple_list_followers(list_of_usedids):
             response = {'len_of_cross_list': len(cross_list), 'cross_list': None, 'msg': 'There are no similar followers'}
         else:
             response = {'len_of_cross_list': len(cross_list), 'cross_list': cross_list, 'msg': 'Success'}
-    emit('cross_list_response', response)
-    # return response
+    # emit('cross_list_response', response)
+    return response
 
 
 # def get_cross_list(list_of_lists):
