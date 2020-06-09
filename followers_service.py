@@ -269,9 +269,9 @@ def followers(user_id):
     followers_list = get_followers_list(user_id=user_id)
     res = {'foll_list': followers_list}
     # set_followers(user_id, res)
-    emit('followers_response', res)
 
-    # return res
+    # emit('followers_response', res)
+    return res
 
 
 def get_accounts_info(list_of_usernames):
@@ -293,8 +293,8 @@ def get_accounts_info(list_of_usernames):
             else:
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
         response = {'msg': check_result, 'number_of_all_foll': sum_of_followers}
-    emit('accounts_info', response)
-    # return response
+    # emit('accounts_info', response)
+    return response
 
 
 def get_multiple_list_followers(list_of_usedids):
@@ -314,59 +314,28 @@ def get_multiple_list_followers(list_of_usedids):
     # return response
 
 
-def get_cross_list(list_of_lists):
-    print(type(list_of_lists))
-    if not isinstance(list_of_lists, list) and len(list_of_lists < 2):
-        response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
-    else:
-        cross_list_ = list_of_lists[0]
-        for element in list_of_lists:
-            if element != cross_list_:
-                cross_list_ = list(set(cross_list_) & set(element))
-        response = {'len_of_cross_list': len(cross_list_), 'cross_list': cross_list_, 'msg': 'Success'}
-
-    emit('cross_list_response', response)
-    # return response
+# def get_cross_list(list_of_lists):
+#     print(type(list_of_lists))
+#     if not isinstance(list_of_lists, list) and len(list_of_lists < 2):
+#         response = {'len_of_cross_list': None, 'cross_list': None, 'msg': 'Too little number of accounts'}
+#     else:
+#         cross_list_ = list_of_lists[0]
+#         for element in list_of_lists:
+#             if element != cross_list_:
+#                 cross_list_ = list(set(cross_list_) & set(element))
+#         response = {'len_of_cross_list': len(cross_list_), 'cross_list': cross_list_, 'msg': 'Success'}
+#
+#     emit('cross_list_response', response)
+#     # return response
 
 
 if __name__ == '__main__':
-    # list_one = ['anastasiiaonatii', 'dmitrenkovitalii', 'denshcherbak', 'ejayy.official', 'sava_z', 'obi_van_kenobi_van', 'expelz', 'anastasiia_bogdanov_', 'adedashka', 'oldhouse_bakery', 'ivosaca', 'alla.vlayko', 'nata.cvetaeva', 'kqllly', 'marilien_m', 'antony_drovalev']
-    # list_second = ['ivosaca', 'alla.vlayko', 'nata.cvetaeva', 'kqllly', 'marilien_m', 'antony_drovalev', 'bladiclab', 'alenka.stets', 'lazar_ira', 'fowiflowi', 'smyarga', 'k_aarrtt', 'mandrikm', 'persik1698', 'beatkafasi', 'k_voropaieva', 'mashakondratenko_', 'v_butovskyi', 'svetik3678', 'igorrr._', 'sazonova__m', 'nastya_rybchenko', 'mrvadamas', 'murmur_mari_', 'kolyayurchenko']
-    # third_list = ['kqllly', 'antony_drovalev', 'marilien_m', 'nata.cvetaeva', 'ivosaca']
-    # list_of_lists = [list_one, list_second, third_list]
+
+    account_info = account_info('serhii_stets')
+    user_id = account_info['user_id']
+    followers = followers(user_id)
+    print(followers)
     #
-    # cross_list = get_cross_list('jhvkckt')
-    # print(cross_list)
-
-    # start_program_time = time()
-    # acc_info = account_info('mur_mur_mash')
-
-    #
-    user_names = 'serhii_stets&mongolo4ka'
-    accounts_info = get_accounts_info(user_names)
-    print(accounts_info)
-
-
-
-    # acc_info_first = account_info('serhii_stets')
-    # print(acc_info_first)
-    # if not acc_info_first['is_private']:
-    #     user_id_first = acc_info_first['user_id']
-    #
-    # acc_info_second = account_info('mongolo4ka')
-    # print(acc_info_second)
-    # if not acc_info_first['is_private']:
-    #     user_id_second = acc_info_second['user_id']
-    # #
-    # # acc_info_third = account_info('alenka.stets')
-    # # print(acc_info_third)
-    # # if not acc_info_third['is_private']:
-    # #     user_id_third = acc_info_third['user_id']
-    # #
-    # list_user_ids = [user_id_first, user_id_second]
-    # print(list_user_ids)
-    # #
-    # cross_list = get_multiple_list_followers(list_user_ids)
-    # print(cross_list)
-
-#     # print(time() - start_program_time)
+    # user_names = 'serhii_stets&mongolo4ka'
+    # accounts_info = get_accounts_info(user_names)
+    # print(accounts_info)

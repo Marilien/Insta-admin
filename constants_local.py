@@ -11,6 +11,7 @@
 # MY_PASSWORD = 'testproject'
 
 LOGIN_DATA = [
+    {"MY_USERNAME": "instaadmin313", "MY_PASSWORD": "instaadmin"},
     {"MY_USERNAME": "amalgama00001", "MY_PASSWORD": "12345678Ab"},
     {"MY_USERNAME": "faketestuser1", "MY_PASSWORD": "Ds3kkGzYLv2FJy4"},
     {"MY_USERNAME": "faketestuser2", "MY_PASSWORD": "Ds3kkGzYLv2FJy4"},
@@ -22,7 +23,6 @@ LOGIN_DATA = [
     {"MY_USERNAME": "instaadmin999", "MY_PASSWORD": "inst999"},
     {"MY_USERNAME": "tes_tproject", "MY_PASSWORD": "testproject"},
     {"MY_USERNAME": "masha24484", "MY_PASSWORD": "m24484"},
-    {"MY_USERNAME": "instaadmin313", "MY_PASSWORD": "instaadmin"}
 ]
 
 
