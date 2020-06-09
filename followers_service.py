@@ -233,7 +233,7 @@ def account_info(username):
                    'user_id': user_id,
                    'msg': 'Account exist'}
 
-        elif followers_len > 200000:
+        elif followers_len > 10000:
             res = {'is_private': False,
                    'num_of_foll': followers_len,
                    'user_id': user_id,
