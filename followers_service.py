@@ -301,7 +301,6 @@ def get_accounts_info(list_of_usernames):
             else:
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
         response = {'msg': check_result, 'number_of_all_foll': sum_of_followers}
-    # emit('accounts_info', response)
     return response
 
 
