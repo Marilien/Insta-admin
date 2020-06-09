@@ -52,7 +52,6 @@ def login_get_api(username, password, coockie_file):
             # print('Unable to find file: {0!s}'.format(settings_file))
 
             # login new
-            print('create api in branch #1')
             api = Client(
                 username, password,
                 on_login=lambda x: onlogin_callback(x, coockie_file))
@@ -62,15 +61,12 @@ def login_get_api(username, password, coockie_file):
             #     on_login=lambda x: onlogin_callback(x, args.settings_file_path))
 
         else:
-            print('else branch')
             with open(settings_file) as file_data:
-                print('open settings file')
                 cached_settings = json.load(file_data, object_hook=from_json)
             # print('Reusing settings: {0!s}'.format(settings_file))
 
             device_id = cached_settings.get('device_id')
             # reuse auth settings
-            print('create api in branch#2')
             api = Client(
                 username, password,
                 settings=cached_settings)
@@ -103,7 +99,6 @@ def login_get_api(username, password, coockie_file):
     # except Exception as e:
     #     print('Unexpected Exception: {0!s}'.format(e))
     #     exit(99)
-    print('return api')
     return api
 
 
@@ -113,7 +108,6 @@ def get_user_info(user_name):
     while True:
         api = get_api(i)
         if api is None:
-            print('get_user_info: api is none:', i)
             return None
         try:
             user_info = api.username_info(user_name)
@@ -188,7 +182,6 @@ def get_api(index):
     # print(MY_USERNAME)
     # print(MY_PASSWORD)
     # api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
-    print('length: ',len(LOGIN_DATA))
     if index != 0:
         os.remove(COOCKIE_FILE_PATH)
     if index >= len(LOGIN_DATA):
