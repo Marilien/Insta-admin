@@ -79,6 +79,6 @@ def multiple_accounts_info(list_of_usernames):
 #         return "Nay!", 202
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port="5000",debug=True)
 ## marta.khoma 1424071908
 ## mongolo4ka_ 9264496810
