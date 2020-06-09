@@ -210,7 +210,9 @@ def account_info(username):
     # if (stored_account_info is not None):
     #    return stored_account_info
     user_info = get_user_info(username)
+    print(user_info)
     user_id = user_info.get('user', []).get('pk', [])
+    print(user_id)
     followers_len = user_info.get('user', []).get('follower_count', [])
 
     if user_info.get('user', []).get('is_private', []):
