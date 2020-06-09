@@ -290,8 +290,10 @@ def get_accounts_info(list_of_usernames):
     else:
         check_result = 'Success'
         sum_of_followers = 0
+        list_user_ids = ''
         for username in list_of_usernames:
             user_info = get_user_info(username)
+            print(user_info)
             if user_info.get('user', []).get('is_private', []):
                 check_result = 'Private'
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
@@ -299,8 +301,12 @@ def get_accounts_info(list_of_usernames):
                 check_result = 'No_foll'
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
             else:
+                if list_user_ids == '':
+                    list_user_ids = list_user_ids + str(user_info.get('user', []).get('pk', []))
+                else:
+                    list_user_ids = list_user_ids + '&' + str(user_info.get('user', []).get('pk', []))
                 sum_of_followers += user_info.get('user', []).get('follower_count', [])
-        response = {'msg': check_result, 'number_of_all_foll': sum_of_followers}
+        response = {'msg': check_result, 'number_of_all_foll': sum_of_followers, 'user_ids': list_user_ids}
     return response
 
 
@@ -339,10 +345,8 @@ def get_multiple_list_followers(list_of_usedids):
 
 if __name__ == '__main__':
 
-    account_info = account_info('serhii_stets')
-    user_id = account_info['user_id']
-    followers = followers(user_id)
-    print(followers)
+    account_info = get_accounts_info('serhii_stets&alenka_stets')
+    print(account_info)
     #
     # user_names = 'serhii_stets&mongolo4ka'
     # accounts_info = get_accounts_info(user_names)
