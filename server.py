@@ -44,11 +44,16 @@ def handle_multiple_followers(list_of_usedids):
     get_multiple_list_followers(list_of_usedids)
 
 
-@socketio.on('get_accounts_info')
-def handle_accounts_info(list_of_usernames):
-    # print('answer from backend')
-    # emit('followers_response', user_id)
-    get_accounts_info(list_of_usernames)
+# @socketio.on('get_accounts_info')
+# def handle_accounts_info(list_of_usernames):
+#     # print('answer from backend')
+#     # emit('followers_response', user_id)
+#     get_accounts_info(list_of_usernames)
+
+@app.route('/api/get_accounts_info/<list_of_usernames>')
+@cross_origin()
+def multiple_accounts_info(list_of_usernames):
+    return get_accounts_info(list_of_usernames)
 
 
 
