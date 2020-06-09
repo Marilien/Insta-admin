@@ -110,6 +110,7 @@ def get_user_info(user_name):
     while True:
         api = get_api(i)
         if api is None:
+            print('get_user_info: api is none:', i)
             return None
         try:
             user_info = api.username_info(user_name)
@@ -196,6 +197,7 @@ def get_api(index):
     try:
         api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
     except:
+        print('return none in except')
         return None
     return api
 
