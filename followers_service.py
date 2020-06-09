@@ -270,8 +270,8 @@ def followers(user_id):
     res = {'foll_list': followers_list}
     # set_followers(user_id, res)
 
-    # emit('followers_response', res)
-    return res
+    emit('followers_response', res)
+    # return res
 
 
 def get_accounts_info(list_of_usernames):
