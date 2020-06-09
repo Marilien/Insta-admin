@@ -184,6 +184,7 @@ def get_api(index):
     # print(MY_USERNAME)
     # print(MY_PASSWORD)
     # api = login_get_api(username=MY_USERNAME, password=MY_PASSWORD, coockie_file=COOCKIE_FILE_PATH)
+    print('length: ',len(LOGIN_DATA))
     if index != 0:
         os.remove(COOCKIE_FILE_PATH)
     if index >= len(LOGIN_DATA):
@@ -210,6 +211,7 @@ def account_info(username):
     # if (stored_account_info is not None):
     #    return stored_account_info
     user_info = get_user_info(username)
+    print(user_info)
     user_id = user_info.get('user', []).get('pk', [])
     followers_len = user_info.get('user', []).get('follower_count', [])
 
