@@ -11,6 +11,8 @@
 # MY_PASSWORD = 'testproject'
 
 LOGIN_DATA = [
+
+    {"MY_USERNAME": "test090620", "MY_PASSWORD": "8R=2ep'u#9Pm7&4"},
     {"MY_USERNAME": "accfortest2020", "MY_PASSWORD": "acc2020"},
     {"MY_USERNAME": "accfortest20201", "MY_PASSWORD": "acc20201"},
     {"MY_USERNAME": "accfortest20202", "MY_PASSWORD": "acc20202"},
