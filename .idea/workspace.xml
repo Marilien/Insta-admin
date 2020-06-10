@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="Separete function followers() to account_info() and followers()">
+    <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/constants_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants_local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/followers_1424071908.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/followers_1424071908.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +193,7 @@
       <workItem from="1590583599766" duration="1846000" />
       <workItem from="1591277791504" duration="5891000" />
       <workItem from="1591304142817" duration="239000" />
-      <workItem from="1591798762796" duration="3255000" />
+      <workItem from="1591798762796" duration="4094000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -329,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590244094266</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add new accounts">
+      <created>1591806653658</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591806653658</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add new accounts">
+      <created>1591806836122</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591806836122</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,22 +364,24 @@
     <MESSAGE value="Add switch between login accounts" />
     <MESSAGE value="Check bug with private account" />
     <MESSAGE value="Separete function followers() to account_info() and followers()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separete function followers() to account_info() and followers()" />
+    <MESSAGE value="add new accounts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new accounts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591297375103">
+    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591807992357">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1590075887174" />
-    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.34.1853.1046@67.34.1853.1046" timestamp="1591297375103" />
+    <state x="604" y="168" width="655" height="619" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.34.1853.1046@67.34.1853.1046" timestamp="1591807992357" />
     <state x="589" y="57" width="798" height="997" key="#followers_service" timestamp="1591281079757">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="589" y="57" width="798" height="997" key="#followers_service/67.34.1853.1046@67.34.1853.1046" timestamp="1591281079757" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1590583673976">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="451" y="34" width="1102" height="1014" key="CommitChangelistDialog2" timestamp="1591806836065">
+      <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1590583673976" />
+    <state x="451" y="34" width="1102" height="1014" key="CommitChangelistDialog2/67.34.1853.1046@67.34.1853.1046" timestamp="1591806836065" />
     <state x="-6" y="50" width="1291" height="581" key="DiffContextDialog" timestamp="1590583390355">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -407,11 +422,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1591304248457" />
-    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1591299350693">
+    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1591806837636">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590244096513" />
-    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2/67.34.1853.1046@67.34.1853.1046" timestamp="1591299350693" />
+    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2/67.34.1853.1046@67.34.1853.1046" timestamp="1591806837636" />
     <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1590582689560">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
