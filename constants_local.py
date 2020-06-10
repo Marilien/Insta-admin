@@ -17,12 +17,12 @@ LOGIN_DATA = [
     {"MY_USERNAME": "okaokas5", "MY_PASSWORD": "otaotas123"},
     {"MY_USERNAME": "newacc9513", "MY_PASSWORD": "new9513"},
 
-    {"MY_USERNAME": "iamvqxnzeewqwzfdll", "MY_PASSWORD": "Researchthat1"},
-    {"MY_USERNAME": "testtest0906test", "MY_PASSWORD": "testtest0906"},
-    {"MY_USERNAME": "test090620", "MY_PASSWORD": "8R=2ep'u#9Pm7&4"},
-    {"MY_USERNAME": "accfortest2020", "MY_PASSWORD": "acc2020"},
-    {"MY_USERNAME": "accfortest20201", "MY_PASSWORD": "acc20201"},
-    {"MY_USERNAME": "accfortest20202", "MY_PASSWORD": "acc20202"},
+    # {"MY_USERNAME": "iamvqxnzeewqwzfdll", "MY_PASSWORD": "Researchthat1"},
+    # {"MY_USERNAME": "testtest0906test", "MY_PASSWORD": "testtest0906"},
+    # {"MY_USERNAME": "test090620", "MY_PASSWORD": "8R=2ep'u#9Pm7&4"},
+    # {"MY_USERNAME": "accfortest2020", "MY_PASSWORD": "acc2020"},
+    # {"MY_USERNAME": "accfortest20201", "MY_PASSWORD": "acc20201"},
+    # {"MY_USERNAME": "accfortest20202", "MY_PASSWORD": "acc20202"},
 
     # {"MY_USERNAME": "instaadmin313", "MY_PASSWORD": "instaadmin"},
     # {"MY_USERNAME": "amalgama00001", "MY_PASSWORD": "12345678Ab"},
