@@ -5,24 +5,8 @@
     <title>Title</title>
   </head>
   <body>
-    <script
-      src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
-      integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" charset="utf-8">
-      var socket = io();
-      function sendEvent() {
-        console.log("send event");
-        socket.emit("followers", 1424071908);
-      }
-      socket.on("followers_response", (data) => {
-        console.log(data);
-      });
-    </script>
     <h2>
       Hello world!
     </h2>
-    <button onclick="sendEvent()">send event</button>
   </body>
 </html>
