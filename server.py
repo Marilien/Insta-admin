@@ -23,7 +23,7 @@ def get_followers(user_id):
 def multiple_accounts_info(list_of_usernames):
     return get_accounts_info(list_of_usernames)
 
-@app.route('api/multiple_followers/<list_of_usedids>')
+@app.route('/api/multiple_followers/<list_of_usedids>')
 def handle_multiple_followers(list_of_usedids):
     return get_multiple_list_followers(list_of_usedids)
 
