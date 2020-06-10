@@ -284,7 +284,7 @@ def followers(user_id):
 
 def get_accounts_info(list_of_usernames):
     list_of_usernames = list_of_usernames.split('&')
-    # print(list_of_usernames)
+    print(list_of_usernames)
     if not isinstance(list_of_usernames, list) and len(list_of_usernames < 2):
         response = {'msg': 'Please, put at least two user_names', 'number_of_all_foll': None}
     else:
@@ -344,10 +344,10 @@ def get_multiple_list_followers(list_of_usedids):
 
 
 if __name__ == '__main__':
-
-    account_info = get_accounts_info('serhii_stets&alenka_stets')
-    print(account_info)
     #
+    account_info = get_accounts_info('serhii_stets&alenka.stets')
+    print(account_info)
+
     # user_names = 'serhii_stets&mongolo4ka'
     # accounts_info = get_accounts_info(user_names)
     # print(accounts_info)
