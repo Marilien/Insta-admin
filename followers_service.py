@@ -303,8 +303,8 @@ def get_multiple_list_followers(list_of_usedids):
             list_single_user_followers = get_followers_list(user_id=list_of_usedids[i])
             cross_list = list(set(cross_list) & set(list_single_user_followers))
 
-        if len(cross_list) < 1:
-            response = {'len_of_cross_list': len(cross_list), 'cross_list': None, 'msg': 'There are no similar followers'}
+        if len(cross_list) < 1 or cross_list is None:
+            response = {'len_of_cross_list': 0, 'cross_list': None, 'msg': 'There are no similar followers'}
         else:
             response = {'len_of_cross_list': len(cross_list), 'cross_list': cross_list, 'msg': 'Success'}
     # emit('cross_list_response', response)
