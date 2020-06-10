@@ -331,6 +331,9 @@ if __name__ == '__main__':
     account_info = get_accounts_info('serhii_stets&alenka.stets')
     print(account_info)
 
+    cross = get_multiple_list_followers(account_info['user_ids'])
+    print(cross)
+
     # user_names = 'serhii_stets&mongolo4ka'
     # accounts_info = get_accounts_info(user_names)
     # print(accounts_info)
