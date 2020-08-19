@@ -194,6 +194,7 @@ def get_api(index):
         return None
     return api
 
+
 def account_info(username):
     # stored_account_info = get_account_info(username)
     # if (stored_account_info is not None):
@@ -257,7 +258,7 @@ def followers(user_id):
     # stored_followers = get_followers(user_id)
     # if (stored_followers is not None):
     #    return stored_followers
-    followers_list = get_followers_list(user_id=user_id)
+    followers_list = get_followers_list(user_id=user_id, save=True)
     res = {'foll_list': followers_list}
     # set_followers(user_id, res)
 
@@ -328,12 +329,21 @@ def get_multiple_list_followers(list_of_usedids):
 
 if __name__ == '__main__':
     #
-    account_info = get_accounts_info('serhii_stets&alenka.stets')
-    print(account_info)
+    # account_info = get_accounts_info('serhii_stets&alenka.stets')
+    # print(account_info)
 
-    cross = get_multiple_list_followers(account_info['user_ids'])
-    print(cross)
+    # cross = get_multiple_list_followers(account_info['user_ids'])
+    # print(cross)
+    #
+    # # user_names = 'serhii_stets&mongolo4ka'
+    account_info = account_info('alexandramitroshina')
+    # print(account_info)
+    user_id = account_info['user_id']
+    # # followers = followers(user_id)
+    # # print(followers)
 
-    # user_names = 'serhii_stets&mongolo4ka'
-    # accounts_info = get_accounts_info(user_names)
-    # print(accounts_info)
+    followers_list = []
+    with open('data/followers_186438325.txt', 'r') as reader:
+        for line in reader.readlines():
+            followers_list.append(line)
+    print(followers_list)

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cce6aac6-380c-46bb-a0c5-301c4b695734" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/followers_186438325.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/followers_186438325.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/followers_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/followers_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,6 +176,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -197,6 +208,7 @@
       <workItem from="1591304142817" duration="239000" />
       <workItem from="1591798762796" duration="4932000" />
       <workItem from="1591811957897" duration="434000" />
+      <workItem from="1597837147817" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1588945209012</created>
@@ -363,7 +375,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
@@ -435,19 +447,19 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="354" y="56" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1590066675759" />
-    <state x="161" y="0" key="SettingsEditor" timestamp="1591304248457">
+    <state x="161" y="0" key="SettingsEditor" timestamp="1597837185213">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1591304248457" />
-    <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1591808049065">
-      <screen x="67" y="34" width="1853" height="1046" />
+    <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597837185213" />
+    <state x="233" y="61" width="1000" height="654" key="Vcs.Push.Dialog.v2" timestamp="1597837170899">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1590244096513" />
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1597837170899" />
     <state x="404" y="128" width="1000" height="654" key="Vcs.Push.Dialog.v2/67.34.1853.1046@67.34.1853.1046" timestamp="1591808049065" />
-    <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1590582689560">
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1597837150273">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1590582689560" />
+    <state x="337" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1597837150273" />
     <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590250018090">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -463,12 +475,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Insta_project$followers_service.coverage" NAME="followers-service Coverage Results" MODIFIED="1590584383691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$server.coverage" NAME="server Coverage Results" MODIFIED="1590243955006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_admin$server.coverage" NAME="server Coverage Results" MODIFIED="1591812092652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id.coverage" NAME="example_get_user_id Coverage Results" MODIFIED="1589541521590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/Insta_project$risk_babich_2.coverage" NAME="risk_babich_2 Coverage Results" MODIFIED="1589731609781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Insta_admin$followers_service.coverage" NAME="followers_service Coverage Results" MODIFIED="1591798786923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Insta_project$example_get_user_id__1_.coverage" NAME="example_get_user_id (1) Coverage Results" MODIFIED="1589543750486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/Insta_project$main.coverage" NAME="main Coverage Results" MODIFIED="1589407518652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Insta_admin$server.coverage" NAME="server Coverage Results" MODIFIED="1591812092652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
